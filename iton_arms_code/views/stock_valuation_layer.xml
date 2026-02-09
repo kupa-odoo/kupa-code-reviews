@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_inventory_valuation_search_iton_arms_code" model="ir.ui.view">
+        <field name="name">view.inventory.valuation.search.iton.arms.code</field>
+        <field name="model">stock.valuation.layer</field>
+        <field name="inherit_id" ref="stock_account.view_inventory_valuation_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search//field[@name='product_id']" position="after">
+                <field name="arms_code" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

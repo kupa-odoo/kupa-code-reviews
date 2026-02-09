@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_product_view_form_iton_arms_code" model="ir.ui.view">
+        <field name="name">product.product.form.iton.arms.code</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='barcode']" position="after">
+                <field name="arms_code" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_product_variant_easy_edit_view_inherit_iton_arms_code" model="ir.ui.view">
+        <field name="name">product.product.view.form.easy.inherit.iton.arms.code</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_variant_easy_edit_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='barcode']" position="after">
+                <field name="arms_code" />
+            </xpath>
+
+            <xpath expr="//group[@name='weight']//label[@for='volume']" position="before">
+                <label for="length"/>
+                <div class="o_row">
+                    <field name="length" class="oe_inline"/>
+                    <span><field name="lhw_uom_name"/></span>
+                </div>
+                <label for="width"/>
+                <div class="o_row">
+                    <field name="width" class="oe_inline"/>
+                    <span><field name="lhw_uom_name"/></span>
+                </div>
+                <label for="height"/>
+                <div class="o_row">
+                    <field name="height" class="oe_inline"/>
+                    <span><field name="lhw_uom_name"/></span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

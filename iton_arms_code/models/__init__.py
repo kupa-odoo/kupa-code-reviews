@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+
+from . import mrp_production
+from . import product_product
+from . import product_strategy
+from . import product_template
+from . import stock_lot
+from . import stock_move
+from . import stock_move_line
+from . import stock_orderpoint
+from . import stock_picking
+from . import stock_quant
+from . import stock_scrap
+from . import stock_valuation_layer
