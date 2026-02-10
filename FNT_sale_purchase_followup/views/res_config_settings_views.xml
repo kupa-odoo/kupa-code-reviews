@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+      <record id="res_config_settings_view_form_FNT_sale_purchase_followup" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.FNT.sale.purchase.followup</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <setting id="proforma_configuration" position="after">
+                <setting id="FNT_configuration_followup_interval">
+                    <field name="followup_interval"/>
+                </setting>
+            </setting>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_order_form_inherit_FNT_sale_purchase_followup" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.FNT.sale.purchase.followup</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="file_received"/>
+                <field name="followup_not_required"/>
+                <field name="next_reminder_date"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="before">
+                <widget name="web_ribbon" title="PO Overdue" bg_color="bg-warning" invisible="not is_po_overdue"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale_order_tree_inherit_FNT_sale_purchase_followup" model="ir.ui.view">
+        <field name="name">sale.order.list.inherit.FNT.sale.purchase.followup</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="activity_ids" position="after">
+               <field name="is_po_overdue" widget="po_overdue" string="PO Status"/>
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <t t-name="FNT_sale_purchase_followup.widget_view">
+        <t t-if="props.record.data.is_po_overdue">
+            <span class="badge bg-warning rounded-pill">Overdue</span>
+        </t>
+    </t>
+</template>

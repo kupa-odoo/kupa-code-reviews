@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="submit_po_menu" model="website.menu">
+            <field name="name">Submit PO</field>
+            <field name="url">/sale/upload</field>
+            <field name="sequence" type="int">2000</field>
+            <field name="parent_id" ref="website.main_menu"/>
+        </record>
+    </data>
+</odoo>
