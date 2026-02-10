@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+iton_payment_allocation.access_allocate_payment,access_allocate_payment,iton_payment_allocation.model_allocate_payment,base.group_user,1,1,1,1
+iton_payment_allocation.access_allocate_payment_line,access_allocate_payment_line,iton_payment_allocation.model_allocate_payment_line,base.group_user,1,1,1,1

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_payment_view_list_inherit" model="ir.ui.view">
+        <field name="name">account.payment.view.list.inherit</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list/header/button[@name='action_post']" position="after">
+                <button
+                    name="action_open_allocate_payment_wizard"
+                    type="object"
+                    string="Allocate"
+                    class="btn-primary"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_payment_form_inherit_remaining_allocation" model="ir.ui.view">
+        <field name="name">account.payment.form.inherit.remaining_allocation</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='amount_div']" position="after">
+                <field name="remaining_allocation_amount" readonly="true" invisible="invoice_ids or reconciled_invoice_ids"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_payment_view_list_inherit_remaining_allocation" model="ir.ui.view">
+        <field name="name">account.payment.view.list.inherit.remaining_allocation</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='amount_company_currency_signed']" position="before">
+                <field name="remaining_allocation_amount" string="Remaining Amount" invisible="invoice_ids or reconciled_invoice_ids"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
