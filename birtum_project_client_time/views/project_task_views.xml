@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_task_form2_inherited_birtum_project_client_time" model="ir.ui.view">
+        <field name="name">view.task.form2.inherited.birtum.project.client.time</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited"/>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='page_timesheets']//list/field[@name='unit_amount']" position="after">
+                <field name="client_time" widget="timesheet_uom"/>
+            </xpath>
+
+            <xpath expr='//label[@for="effective_hours"]' position="attributes">
+                <attribute name="for">effective_client_hours</attribute>
+            </xpath>
+
+            <xpath expr="//page[@id='timesheets_tab']//field[@name='effective_hours']" position="attributes">
+                <attribute name="name">effective_client_hours</attribute>
+            </xpath>
+
+            <xpath expr="//page[@id='timesheets_tab']//field[@name='subtask_effective_hours']" position="attributes">
+                <attribute name="name">subtask_client_effective_hours</attribute>
+            </xpath>
+
+            <xpath expr="//page[@id='timesheets_tab']//field[@name='total_hours_spent']" position="attributes">
+                <attribute name="name">total_client_hours_spent</attribute>
+            </xpath>
+
+            <xpath
+                expr="//label[@for='total_hours_spent' and contains(@invisible, 'encode_uom_in_days')]"
+                position="attributes">
+                <attribute name="for">total_client_hours_spent</attribute>
+            </xpath>
+
+            <xpath
+                expr="//label[@for='total_hours_spent' and contains(@invisible, 'not encode_uom_in_days')]"
+                position="attributes">
+                <attribute name="for">total_client_hours_spent</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_tree2_inherited_inherit_birtum_project_client_time" model="ir.ui.view">
+        <field name="name">view.task.tree2.inherited.inherit.birtum.project.client.time</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_tree2_inherited"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='effective_hours' and @widget='timesheet_uom']" position="attributes">
+                <attribute name="name">effective_client_hours</attribute>
+                <attribute name="invisible">effective_client_hours == 0</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

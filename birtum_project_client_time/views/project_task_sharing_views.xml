@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_sharing_inherit_project_task_view_form_inherit_birtum_project_client_time" model="ir.ui.view">
+        <field name="name">project.sharing.inherit.project.task.view.form.inherit.birtum.project.client.time</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.project_sharing_inherit_project_task_view_form"/>
+        <field name="priority" eval="999"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='page_timesheets']//list/field[@name='unit_amount']" position="attributes">
+                <attribute name="column_invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='page_timesheets']//list/field[@name='unit_amount']" position="after">
+                <field name="client_time" string="Client Time" widget="timesheet_uom"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="project_sharing_inherit_project_task_view_form_inherit_birtum_project_client_time1" model="ir.ui.view">
+        <field name="name">project.sharing.inherit.project.task.view.form.inherit.birtum.project.client.time1</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="sale_timesheet.project_sharing_inherit_project_task_view_form"/>
+        <field name="priority" eval="999"/>
+        <field name="arch" type="xml">
+            <xpath expr='//label[@for="portal_effective_hours"]' position="attributes">
+                <attribute name="for">portal_effective_client_hours</attribute>
+            </xpath>
+
+            <xpath expr="//page[@id='timesheets_tab']//field[@name='portal_effective_hours']" position="attributes">
+                <attribute name="name">portal_effective_client_hours</attribute>
+            </xpath>
+
+             <xpath expr="//button[@name='action_view_subtask_timesheet']" position="attributes">
+                <attribute name="invisible">portal_subtask_client_effective_hours == 0.0</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='portal_subtask_effective_hours']" position="attributes">
+                <attribute name="name">portal_subtask_client_effective_hours</attribute>
+                <attribute name="invisible">portal_subtask_client_effective_hours == 0.0</attribute>
+            </xpath>
+
+            <xpath expr="//span[@id='total_hours_spent_label']" position="attributes">
+                <attribute name="invisible">portal_subtask_client_effective_hours == 0.0</attribute>
+            </xpath>
+
+            <xpath expr="//label[@for='portal_total_hours_spent']" position="attributes">
+                <attribute name="for">portal_total_client_hours_spent</attribute>
+            </xpath>
+
+            <xpath expr="//label[@for='portal_total_hours_spent']" position="attributes">
+                <attribute name="for">portal_total_client_hours_spent</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='portal_total_hours_spent']" position="attributes">
+                <attribute name="name">portal_total_client_hours_spent</attribute>
+                <attribute name="invisible">portal_subtask_client_effective_hours == 0.0</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
