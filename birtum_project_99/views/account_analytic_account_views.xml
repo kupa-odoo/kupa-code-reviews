@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_account_analytic_account_form_inherit_birtum_project_99" model="ir.ui.view">
+        <field name="name">view.account.analytic.account.form.inherit.birtum.project.99</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <field name="plan_is_department" invisible="1"/>
+                <field name="is_99" widget="boolean_toggle" invisible="not plan_is_department" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

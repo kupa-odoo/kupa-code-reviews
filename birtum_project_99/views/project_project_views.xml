@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="edit_project_inherited_birtum_project_99" model="ir.ui.view">
+        <field name="name">edit.project.inherited.birtum.project.99</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_start']" position="after">
+                <field name="is_international" widget="boolean_toggle" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_department_form_inherit_birtum_project_99" model="ir.ui.view">
+        <field name="name">view.department.form.inherit.birtum.project.99</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='color']" position="after">
+                <field name="analytic_account" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
