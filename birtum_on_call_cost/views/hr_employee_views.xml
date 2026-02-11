@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form_inherit_birtum_on_call_cost" model="ir.ui.view">
+        <field name="name">view.employee.form.inherit.birtum.on.call.cost</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <group name="application_group" position="inside">
+                <label for="extra_hourly_cost"/>
+                <div name="extra_hourly_cost">
+                    <field name="extra_hourly_cost" class="oe_inline"/>
+                    <field name="currency_id" invisible="1"/>
+                </div>
+            </group>
+        </field>
+    </record>
+</odoo>

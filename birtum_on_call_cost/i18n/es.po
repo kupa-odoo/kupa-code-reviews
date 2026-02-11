@@ -1,0 +1,86 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* birtum_on_call_cost
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-09 09:55+0000\n"
+"PO-Revision-Date: 2026-02-09 09:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: birtum_on_call_cost
+#: model:ir.model,name:birtum_on_call_cost.model_account_analytic_line
+msgid "Analytic Line"
+msgstr ""
+
+#. module: birtum_on_call_cost
+#: model:ir.model.fields,field_description:birtum_on_call_cost.field_account_analytic_line__display_name
+#: model:ir.model.fields,field_description:birtum_on_call_cost.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:birtum_on_call_cost.field_project_sale_line_employee_map__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: birtum_on_call_cost
+#: model:ir.model,name:birtum_on_call_cost.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: birtum_on_call_cost
+#: model:ir.model.fields,field_description:birtum_on_call_cost.field_project_sale_line_employee_map__extra_cost
+msgid "Extra Cost"
+msgstr ""
+
+#. module: birtum_on_call_cost
+#: model:ir.model.fields,field_description:birtum_on_call_cost.field_hr_employee__extra_hourly_cost
+#: model:ir.model.fields,field_description:birtum_on_call_cost.field_project_sale_line_employee_map__extra_display_cost
+msgid "Extra Hourly Cost"
+msgstr "Coste guarida"
+
+#. module: birtum_on_call_cost
+#: model:ir.model.fields,field_description:birtum_on_call_cost.field_account_analytic_line__is_on_call
+msgid "Is On Call"
+msgstr "Tiempo guarida"
+
+#. module: birtum_on_call_cost
+#: model:ir.model.fields,field_description:birtum_on_call_cost.field_account_analytic_line__id
+#: model:ir.model.fields,field_description:birtum_on_call_cost.field_hr_employee__id
+#: model:ir.model.fields,field_description:birtum_on_call_cost.field_project_sale_line_employee_map__id
+msgid "ID"
+msgstr ""
+
+#. module: birtum_on_call_cost
+#: model:ir.model,name:birtum_on_call_cost.model_project_sale_line_employee_map
+msgid "Project Sales line, employee mapping"
+msgstr ""
+
+#. module: birtum_on_call_cost
+#. odoo-python
+#: code:addons/birtum_on_call_cost/models/account_analytic_line.py:0
+msgid "The project, the task and the analytic accounts of the timesheet must belong to the same company."
+msgstr "El proyecto, la tarea y las cuentas analíticas del parte de horas deben pertenecer a la misma compañía."
+
+#. module: birtum_on_call_cost
+#: model:ir.model.fields,help:birtum_on_call_cost.field_project_sale_line_employee_map__extra_cost
+msgid ""
+"This cost overrides the employee's default employee hourly wage in "
+"employee's HR Settings"
+msgstr ""
+"Este coste anula el salario por hora por defecto del empleado en la "
+"Configuración de la aplicación de RR. HH. del empleado"
+
+#. module: birtum_on_call_cost
+#. odoo-python
+#: code:addons/birtum_on_call_cost/models/account_analytic_line.py:0
+msgid ""
+"Timesheets must be created with at least an active analytic account defined "
+"in the plan '%(plan_name)s'."
+msgstr ""
+"Es necesario que cree los partes de horas con al menos una cuenta analítica "
+"activa definida en el plan “%(plan_name)s”."

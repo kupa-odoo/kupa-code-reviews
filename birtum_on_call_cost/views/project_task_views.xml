@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_task_form2_inherited_birtum_on_call_cost" model="ir.ui.view">
+        <field name="name">view.task.form2.inherited.birtum.on.call.cost</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='page_timesheets']//list/field[@name='name']" position="after">
+                <field name="is_on_call" widget="boolean_toggle"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="project_project_view_form_inherit_birtum_on_call_cost" model="ir.ui.view">
+        <field name="name">project.project.view.form.inherit.birtum.on.call.cost</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="sale_timesheet.project_project_view_form"/>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='billing_employee_rate']//list/field[@name='display_cost']" position="after">
+                <field name="extra_display_cost" widget="monetary" options="{'currency_field': 'cost_currency_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
