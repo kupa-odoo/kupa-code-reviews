@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="edit_project_inhetit_sotelo_certification" model="ir.ui.view">
+        <field name="name">edit.project.inhetit.sotelo.certification</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="certificate" string="Certification">
+                    <group>
+                        <field name="certification_product" />
+                        <field name="invoice_deduction_product" />
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

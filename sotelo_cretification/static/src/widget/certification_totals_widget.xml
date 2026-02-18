@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <t t-name="sotelo_certification.widget_view">
+        <t t-set="totals" t-value="props.record.data.certification_totals || {}"/>
+        <table class="table table-sm table-borderless">
+            <tbody>
+                <tr>
+                    <td class="py-1 pe-4">
+                            Total Cerification Amount
+                    </td>
+                    <td class="text-end py-1">
+                        <strong>
+                            <t t-out="formatMonetary(totals.current_certification_amount)" />
+                        </strong>
+                    </td>
+                </tr>
+
+                <t t-if="totals.previous_certifications and totals.previous_certifications.length > 0">
+                    <t t-foreach="totals.previous_certifications" t-as="line" t-key="line.name">
+                        <tr>
+                            <td class="py-1 pe-4">
+                                    Deduction Previous Invoice <t t-esc="line.name"/>
+                            </td>
+                            <td class="text-end text-danger py-1">
+                                <strong>
+                                    <t t-out="formatMonetary(line.amount)"/>
+                                </strong>
+                            </td>
+                        </tr>
+                    </t>
+                </t>
+
+                <tr class="border-top">
+                    <td class="py-1 pe-4">
+                           Total to be invoiced
+                    </td>
+                    <td class="text-end fw-bold py-1">
+                        <strong>
+                            <t t-out="formatMonetary(totals.total_net_amount)"/>
+                        </strong>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </t>
+</template>

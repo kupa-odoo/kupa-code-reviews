@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_project_certification_document1">
+        <t t-call="web.external_layout">
+            <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
+            <div class="page">
+                <div class="d-flex justify-content-between mb-3 ft-13">
+                    <div>
+                        Customer:
+                        <span class="fw-900" t-esc="o.partner_id.name"/>
+                    </div>
+
+                    <div>
+                        Project:
+                        <span class="fw-900" t-esc="o.project_id.name"/>
+                    </div>
+
+                    <div>
+                        Certfication Date:
+                        <span class="fw-900" t-esc="o.date_certification.strftime('%d/%m/%Y') if o.date_certification else ''"/>
+                    </div>
+
+                    <div>
+                        Certification Name:
+                        <span class="fw-900" t-esc="o.name"/>
+                    </div>
+                </div>
+                <table class="table table-sm table-bordered ft-12">
+                    <thead class="bg-thead">
+                        <tr>
+                            <th class="text-center fw-900">Sale Order</th>
+                            <th class="text-center fw-900">Product</th>
+                            <th class="text-center fw-900">qty</th>
+                            <th class="text-center fw-900">Price</th>
+                            <th class="text-center fw-900">discount</th>
+                            <th class="text-center fw-900">Net Price</th>
+                            <th class="text-center fw-900">Total</th>
+                            <th class="text-center fw-900">Work Status</th>
+                            <th class="text-center fw-900">Accumulated Cert. Percentage</th>
+                            <th class="text-center fw-900">Accumulated Cert. Amount</th>
+                            <th class="text-center fw-900">Pending Cert. Amount</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <t t-foreach="o.certification_line_ids" t-as="line">
+                            <tr>
+                                <td class="text-start ps-1">
+                                    <span t-esc="line.sale_id.name"/>
+                                </td>
+                                <td class="text-start">
+                                    <span t-esc="line.product_id.name"/>
+                                </td>
+                                <td class="text-end pe-2">
+                                    <span t-esc="line.product_uom_qty"/>
+                                </td>
+                                <td class="text-end pe-2">
+                                    <span t-esc="line.price_unit"/>
+                                </td>
+                                <td class="text-end pe-2">
+                                    <span t-esc="line.discount"/>
+%
+                                </td>
+                                <td class="text-end pe-2">
+                                    <span t-esc="line.net_unit_price"/>
+                                </td>
+                                <td class="text-end pe-2">
+                                    <span t-esc="line.price_subtotal"/>
+                                </td>
+                                <td class="text-start">
+                                    <span t-esc="dict(line._fields['work_status'].selection).get(line.work_status, '')"/>
+                                </td>
+                                <td class="text-end pe-2">
+                                    <span t-esc="'%.1f' % (line.accumulated_percentage * 100)"/>
+                                </td>
+                                <td class="text-end pe-2">
+                                    <span t-esc="line.accumulated_amount"/>
+                                </td>
+                                <td class="text-end pe-2">
+                                    <t t-if="line.pending_certi_amount">
+                                        <span t-esc="line.pending_certi_amount"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span class="p-2">-</span>
+                                    </t>
+                                </td>
+                            </tr>
+                        </t>
+                        <tr class="fw-bold border-0">
+                            <td colspan="6" class="border-0"></td>
+
+                            <td class="text-end pe-2 fw-900 border-0">
+                                <span t-esc="'%.2f' % sum(o.certification_line_ids.mapped('price_subtotal'))"/>
+                            </td>
+
+                            <td colspan="2" class="border-0"></td>
+
+                            <td class="text-end pe-2 fw-900 border-0">
+                                <span t-esc="'%.2f' % sum(o.certification_line_ids.mapped('accumulated_amount'))"/>
+                            </td>
+
+                            <td class="text-end pe-2 fw-900 border-0">
+                                <span t-esc="'%.2f' % sum(o.certification_line_ids.mapped('pending_certi_amount'))"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <t t-set="totals" t-value="o.certification_totals or {}"/>
+                <t t-set="current_amount" t-value="totals['current_certification_amount'] if 'current_certification_amount' in totals else 0.0"/>
+                <t t-set="previous_list" t-value="totals['previous_certifications'] if 'previous_certifications' in totals else []"/>
+                <t t-set="net_total" t-value="totals['total_net_amount'] if 'total_net_amount' in totals else 0.0"/>
+
+                <div class="mt-40 w-60">
+
+                    <div class="fw-bold p-1 bg-stats">
+                        PROJECT ECONOMIC STATUS
+                    </div>
+
+                    <div class="pt-2 ft-13">
+
+                        <div>
+                            TOTAL CERTIFICACION AMOUNT
+                            <span class="float-end">
+                                <span t-esc="current_amount" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                            </span>
+                        </div>
+
+                        <t t-foreach="previous_list" t-as="prev">
+                            <div>
+                                DEDUCTION PREVIOUS INVOICE
+                                <span t-esc="prev['name']"/>
+
+                                <span class="float-end text-danger">
+                    -
+                                    <span t-esc="prev['amount']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                </span>
+                            </div>
+                        </t>
+
+                        <div class="fw-900">
+                            TOTAL AMOUNT
+                            <span class="float-end">
+                                <span t-esc="net_total" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_project_certification_document">
+        <t t-call="web.html_container">
+            <t t-set="is_delivery" t-value="True"/>
+            <t t-foreach="docs" t-as="o">
+                <t t-call="sotelo_cretification.report_project_certification_document1" t-lang="o.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_embedded_action_project_certification" model="ir.embedded.actions">
+        <field name="parent_res_model">project.project</field>
+        <field name="name">Certification</field>
+        <field name="parent_action_id" ref="project.act_project_project_2_project_task_all"/>
+        <field name="python_method">action_view_certifications</field>
+        <field name="domain">[('allow_billable', '=', True)]</field>
+    </record>
+</odoo>
