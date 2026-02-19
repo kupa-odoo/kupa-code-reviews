@@ -28,17 +28,17 @@
                 <table class="table table-sm table-bordered ft-12">
                     <thead class="bg-thead">
                         <tr>
-                            <th class="text-center fw-900">Sale Order</th>
-                            <th class="text-center fw-900">Product</th>
-                            <th class="text-center fw-900">qty</th>
-                            <th class="text-center fw-900">Price</th>
-                            <th class="text-center fw-900">discount</th>
-                            <th class="text-center fw-900">Net Price</th>
-                            <th class="text-center fw-900">Total</th>
-                            <th class="text-center fw-900">Work Status</th>
-                            <th class="text-center fw-900">Accumulated Cert. Percentage</th>
-                            <th class="text-center fw-900">Accumulated Cert. Amount</th>
-                            <th class="text-center fw-900">Pending Cert. Amount</th>
+                            <th class="text-center fw-900 w-9">Sale Order</th>
+                            <th class="text-center fw-900 w-20">Product</th>
+                            <th class="text-center fw-900 w-5">qty</th>
+                            <th class="text-center fw-900 w-9">Price</th>
+                            <th class="text-center fw-900 w-5">discount</th>
+                            <th class="text-center fw-900 w-9">Net Price</th>
+                            <th class="text-center fw-900 w-9">Total</th>
+                            <th class="text-center fw-900 w-9">Work Status</th>
+                            <th class="text-center fw-900 w-5">Accumulated Cert. Percentage</th>
+                            <th class="text-center fw-900 w-9">Accumulated Cert. Amount</th>
+                            <th class="text-center fw-900 w-9">Pending Cert. Amount</th>
                         </tr>
                     </thead>
 

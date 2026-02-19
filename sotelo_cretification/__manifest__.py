@@ -34,7 +34,6 @@ sotelo_certification |  TaskID: 5862655
         'views/account_move_views.xml',
         'views/project_certification_views.xml',
         'views/project_project_views.xml',
-        'views/project_views.xml',
     ],
     "assets": {
         "web.assets_backend": [

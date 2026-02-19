@@ -12,7 +12,7 @@ class AccountMove(models.Model):
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
-            'name': 'Certification',
+            'name': self.env._('Certification'),
             'res_model': 'project.certification',
             'view_mode': 'form',
             'res_id': self.certfication_id.id,

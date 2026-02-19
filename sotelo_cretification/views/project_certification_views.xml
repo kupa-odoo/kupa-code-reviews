@@ -40,12 +40,12 @@
                     </div>
                     <group name="certification_header">
                         <group name="partner_details">
-                            <field name="partner_id" widget="res_partner_many2one" readonly="state == 'confirmed'" context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}"/>
                             <label for="project_id"/>
                             <div class="o_row">
                                 <field name="project_id" readonly="state == 'confirmed'" options="{'no_open': True, 'no_create': True}"/>
                                 <button name="action_update_certification_line" type="object" string="Update line" help="update certification line based on the project." class="btn-link mb-1 px-0" icon="fa-refresh" confirm="This will create new certiifcation lines based on the selected project." invisible="not show_update_certification_line"/>
                             </div>
+                            <field name="partner_id" widget="res_partner_many2one" readonly="state == 'confirmed'" context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}"/>
                             <field name="partner_invoice_id" groups="account.group_delivery_invoice_address" options="{'no_quick_create': True}" readonly="state == 'confirmed'" />
                             <field name="partner_shipping_id" groups="account.group_delivery_invoice_address" options="{'no_quick_create': True}" readonly="state == 'confirmed'" />
                         </group>
@@ -87,7 +87,7 @@
                                     <field name="prev_accumulated_percentage" widget="percentage" />
                                     <field name="prev_accumulated_uds" />
                                     <field name="prev_accumulated_amount" sum="Prev Accumulated Amount"/>
-                                    <field name="prev_pending_ceri_percentage" widget="percentage" />
+                                    <field name="prev_pending_certi_percentage" widget="percentage" />
                                     <field name="prev_pending_certi_uds" />
                                     <field name="prev_pending_certi_amount" sum="Prev Pending Certi Amount"/>
                                 </list>

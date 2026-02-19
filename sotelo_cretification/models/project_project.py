@@ -4,10 +4,10 @@ from odoo import fields, models
 
 
 class ProjectProject(models.Model):
-    _inherit="project.project"
+    _inherit = "project.project"
 
-    certification_product = fields.Many2one("product.product",)
-    invoice_deduction_product = fields.Many2one("product.product",)
+    certification_product = fields.Many2one("product.product")
+    invoice_deduction_product = fields.Many2one("product.product")
 
     def action_view_certifications(self):
         self.ensure_one()
@@ -19,12 +19,12 @@ class ProjectProject(models.Model):
             'view_mode': 'list,form',
             'domain': [('project_id', '=', self.id)],
             'context': {
-                'default_project_id': self.id,
-            },
+                'default_project_id': self.id
+            }
         }
         if len(certifications) == 1:
             action.update({
                 'res_id': certifications.id,
-                'view_mode': 'form',
+                'view_mode': 'form'
             })
         return action

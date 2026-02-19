@@ -1,0 +1,810 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sotelo_cretification
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-18 07:10+0000\n"
+"PO-Revision-Date: 2026-02-18 07:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_move_form_inhetit_sotelo_certification
+msgid "<span class=\"o_stat_text\">Cretification</span>"
+msgstr "<span class=\"o_stat_text\">Certificación</span>"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "<span class=\"o_stat_text\">Invoice</span>"
+msgstr "<span class=\"o_stat_text\">Factura</span>"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "<span class=\"p-2\">-</span>"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__prev_work_status__accepted
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__work_status__accepted
+msgid "Accepted"
+msgstr "Aceptado"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__accumulated_amount
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Accumulated Amount"
+msgstr "Cantidad acumulada"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Accumulated Cert. Amount"
+msgstr "Monto Cert. Acum."
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Accumulated Cert. Percentage"
+msgstr "Porcentaje Cert. Acum."
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__accumulated_certification_total_amount
+msgid "Accumulated Certification Total Amount"
+msgstr "Monto total de certificación acumulada"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__accumulated_percentage
+msgid "Accumulated Percentage"
+msgstr "Porcentaje acumulado"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__accumulated_uds
+msgid "Accumulated Uds"
+msgstr "Uds acumulados"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__prev_work_status__advance_accepted
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__work_status__advance_accepted
+msgid "Advance accepted"
+msgstr "Aceptado Anticipo"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_account_bank_statement_line__certfication_id
+#: model:ir.model.fields,field_description:sotelo_cretification.field_account_move__certfication_id
+msgid "Certfication"
+msgstr "Certificación"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Certfication Date:"
+msgstr "Fecha de certificación:"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__certificate_invoice_id
+msgid "Certificate Invoice"
+msgstr "Factura de certificado"
+
+#. module: sotelo_cretification
+#. odoo-python
+#: code:addons/sotelo_cretification/models/account_move.py:0
+#: model:ir.embedded.actions,name:sotelo_cretification.project_embedded_action_project_certification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__certification_id
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.edit_project_inhetit_sotelo_certification
+msgid "Certification"
+msgstr "Certificación"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__certification_amount
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Certification Amount"
+msgstr "Monto de la certificación"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__date_certification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_search
+msgid "Certification Date"
+msgstr "Fecha de certificación"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__certification_line_ids
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Certification Lines"
+msgstr "Líneas de Certificación"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Certification Name:"
+msgstr "Nombre de la certificación:"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_search
+msgid "Certification Number"
+msgstr "Número de certificación"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__certification_percentage
+msgid "Certification Percentage"
+msgstr "Porcentaje de certificación"
+
+#. module: sotelo_cretification
+#: model:ir.model.constraint,message:sotelo_cretification.constraint_project_certification_line_check_certification_percent_c4ccc4ca
+msgid "Certification Percentage must be Positive."
+msgstr "El porcentaje de certificación debe ser positivo."
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_project__certification_product
+msgid "Certification Product"
+msgstr "Producto de certificación"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__certification_totals
+msgid "Certification Totals"
+msgstr "Totales de certificación"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__certification_uds
+msgid "Certification Uds"
+msgstr "Certificación Uds"
+
+#. module: sotelo_cretification
+#. odoo-python
+#: code:addons/sotelo_cretification/models/project_project.py:0
+msgid "Certifications"
+msgstr "Certificaciones"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__name
+msgid "Certiifcation Reference"
+msgstr "Referencia de certificación"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification__state__confirmed
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Create Invoice"
+msgstr "Crear factura"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__create_uid
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__create_date
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,help:sotelo_cretification.field_project_certification__date_certification
+msgid "Creation date of draft Certification."
+msgstr "Fecha de creación del borrador de Certificación."
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__currency_id
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__partner_id
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_search
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: sotelo_cretification
+#. odoo-python
+#: code:addons/sotelo_cretification/models/project_certification.py:0
+msgid "Customer Invoice"
+msgstr "Factura del cliente"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Customer:"
+msgstr "Cliente:"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "DEDUCTION PREVIOUS INVOICE"
+msgstr "DEDUCCION FACTURA ANTERIOR"
+
+#. module: sotelo_cretification
+#. odoo-python
+#: code:addons/sotelo_cretification/models/project_certification.py:0
+msgid "Deduction - %s"
+msgstr "Deducción - %s"
+
+#. module: sotelo_cretification
+#. odoo-javascript
+#: code:addons/sotelo_cretification/static/src/widget/certification_totals_widget.xml:0
+msgid "Deduction Previous Invoice"
+msgstr "Deducción Factura Anterior"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__partner_shipping_id
+msgid "Delivery Address"
+msgstr "Dirección de entrega"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__discount
+msgid "Discount (%)"
+msgstr "Descuento (%)"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_account_move__display_name
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__display_name
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__display_name
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_project__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__prev_work_status__falta_remate
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__work_status__falta_remate
+msgid "Falta remate"
+msgstr "Falta remate"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__prev_work_status__finished
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__work_status__finished
+msgid "Finished"
+msgstr "Terminado"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,help:sotelo_cretification.field_project_certification__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__prev_work_status__glass_installation
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__work_status__glass_installation
+msgid "Glass Installation"
+msgstr "Inst. Vidrio."
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_account_move__id
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__id
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__id
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_project__id
+msgid "ID"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,help:sotelo_cretification.field_project_certification__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,help:sotelo_cretification.field_project_certification__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,help:sotelo_cretification.field_project_certification__message_has_error
+#: model:ir.model.fields,help:sotelo_cretification.field_project_certification__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Immediate"
+msgstr "Inmediato"
+
+#. module: sotelo_cretification
+#. odoo-python
+#: code:addons/sotelo_cretification/models/project_certification.py:0
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__partner_invoice_id
+msgid "Invoice Address"
+msgstr "Dirección de facturación"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_project__invoice_deduction_product
+msgid "Invoice Deduction Product"
+msgstr "Producto de deducción de factura"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model,name:sotelo_cretification.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__write_uid
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__write_date
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__price_subtotal
+msgid "Line Total"
+msgstr "Total de línea"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Net Price"
+msgstr "Neto un."
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__net_unit_price
+msgid "Net Unit Price"
+msgstr "Precio unitario neto"
+
+#. module: sotelo_cretification
+#. odoo-python
+#: code:addons/sotelo_cretification/models/project_certification.py:0
+msgid "New"
+msgstr "Nuevo"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_list
+msgid "Number"
+msgstr "Número"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,help:sotelo_cretification.field_project_certification__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,help:sotelo_cretification.field_project_certification__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "PROJECT ECONOMIC STATUS"
+msgstr "ESTADO ECONOMICO PROYECTO"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__payment_term_id
+msgid "Payment Terms"
+msgstr "Condiciones de pago"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Pending Cert. Amount"
+msgstr "Monto Cert. pendiente"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Pending Certi Amount"
+msgstr "Monto pendiente de certificación"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__pending_certi_amount
+msgid "Pending Certification Amount"
+msgstr "Monto de certificación pendiente"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__pending_ceri_percentage
+msgid "Pending Certification Percentage"
+msgstr "Porcentaje de certificación pendiente"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__pending_certi_uds
+msgid "Pending Certification uds"
+msgstr "Certificación pendiente uds"
+
+#. module: sotelo_cretification
+#. odoo-python
+#: code:addons/sotelo_cretification/models/project_certification.py:0
+msgid "Please configure Certification Product on the project."
+msgstr "Configure el producto de certificación en el proyecto."
+
+#. module: sotelo_cretification
+#. odoo-python
+#: code:addons/sotelo_cretification/models/project_certification.py:0
+msgid "Please configure Invoice Deduction Product on the project."
+msgstr "Configure el producto de deducción de factura en el proyecto."
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Prev Accumulated Amount"
+msgstr "Monto acumulado anterior"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Prev Certification Amount"
+msgstr "Monto de certificación anterior"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Prev Pending Certi Amount"
+msgstr "Monto del certificado pendiente anterior"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__prev_accumulated_amount
+msgid "Previous Accumulated Amount"
+msgstr "Monto acumulado anterior"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__prev_accumulated_percentage
+msgid "Previous Accumulated Percentage"
+msgstr "Porcentaje acumulado anterior"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__prev_accumulated_uds
+msgid "Previous Accumulated Uds"
+msgstr "Uds acumuladas anteriores"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__prev_certification_percentage
+msgid "Previous Certidcation Percentage"
+msgstr "Porcentaje de certificación anterior"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__prev_certification_amount
+msgid "Previous Certification Amount"
+msgstr "Monto de certificación anterior"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__prev_certification_uds
+msgid "Previous Certification Uds"
+msgstr "Certificación previa Uds"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__prev_pending_certi_amount
+msgid "Previous Pending Certification Amount"
+msgstr "Monto de certificación pendiente anterior"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__prev_pending_ceri_percentage
+msgid "Previous Pending Certification Percentage"
+msgstr "Porcentaje de certificación pendiente anterior"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__prev_pending_certi_uds
+msgid "Previous Pending Certification uds"
+msgstr "Certificación pendiente anterior uds"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__prev_work_status
+msgid "Previous Work Status"
+msgstr "Estado laboral anterior"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Price"
+msgstr "Precio ud"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__product_id
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Product"
+msgstr "Concepto"
+
+#. module: sotelo_cretification
+#: model:ir.model,name:sotelo_cretification.model_project_project
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__project_id
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_search
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: sotelo_cretification
+#: model:ir.actions.report,name:sotelo_cretification.action_report_project_certification
+#: model:ir.model,name:sotelo_cretification.model_project_certification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Project Certification"
+msgstr "Certificación de proyectos"
+
+#. module: sotelo_cretification
+#: model:ir.model,name:sotelo_cretification.model_project_certification_line
+msgid "Project Certification Line"
+msgstr "Línea de Certificación de Proyectos"
+
+#. module: sotelo_cretification
+#: model:ir.actions.act_window,name:sotelo_cretification.action_project_certification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_list
+msgid "Project Certifications"
+msgstr "Certificaciones de proyectos"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Project:"
+msgstr "Proyecto:"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__product_uom_qty
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__sale_id
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Sale Order"
+msgstr "Orden de venta"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__sale_line_id
+msgid "Sale Order Line"
+msgstr "Línea de orden de venta"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_search
+msgid "Search Certification"
+msgstr "Certificación de búsqueda"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__show_update_certification_line
+msgid "Show Update Certification Line"
+msgstr "Actualizar línea de certificación"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__state
+msgid "Status"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,help:sotelo_cretification.field_project_certification__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Sub Total"
+msgstr "Sub Total"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__prev_work_status__sum_carp
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__work_status__sum_carp
+msgid "Sum. Carp."
+msgstr "Sum. Carp."
+
+#. module: sotelo_cretification
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__prev_work_status__sum_glass
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__work_status__sum_glass
+msgid "Sum. Glass"
+msgstr "Sum. Vidrio"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__prev_work_status__supply
+#: model:ir.model.fields.selection,name:sotelo_cretification.selection__project_certification_line__work_status__supply
+msgid "Supply"
+msgstr "Suministro"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "TOTAL AMOUNT"
+msgstr "IMPORTE TOTAL"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "TOTAL CERTIFICACION AMOUNT"
+msgstr "IMPORTE TOTAL DE LA CERTIFICACIÓN"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__note
+msgid "Terms and conditions"
+msgstr "Términos y condiciones"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Terms and conditions..."
+msgstr "Términos y condiciones..."
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "This will create new certiifcation lines based on the selected project."
+msgstr "Esto creará nuevas líneas de certificación basadas en el proyecto seleccionado."
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Total"
+msgstr "Total"
+
+#. module: sotelo_cretification
+#. odoo-javascript
+#: code:addons/sotelo_cretification/static/src/widget/certification_totals_widget.xml:0
+msgid "Total Cerification Amount"
+msgstr "Monto total de certificación"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__total_to_invoice
+msgid "Total To Invoice Amount"
+msgstr "Total del importe de la factura"
+
+#. module: sotelo_cretification
+#. odoo-javascript
+#: code:addons/sotelo_cretification/static/src/widget/certification_totals_widget.xml:0
+msgid "Total to be invoiced"
+msgstr "Total a facturar"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,help:sotelo_cretification.field_project_certification__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__price_unit
+msgid "Unit Price"
+msgstr "Precio unitario"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "Update line"
+msgstr "Línea de actualización"
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,help:sotelo_cretification.field_project_certification__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model:ir.model.fields,field_description:sotelo_cretification.field_project_certification_line__work_status
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "Work Status"
+msgstr "Estado"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "discount"
+msgstr "Descuento"
+
+#. module: sotelo_cretification
+#. odoo-python
+#: code:addons/sotelo_cretification/models/project_project.py:0
+msgid "project_id"
+msgstr ""
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.report_project_certification_document1
+msgid "qty"
+msgstr "Uds"
+
+#. module: sotelo_cretification
+#: model_terms:ir.ui.view,arch_db:sotelo_cretification.view_project_certification_form
+msgid "update certification line based on the project."
+msgstr "Actualizar la línea de certificación en función del proyecto."

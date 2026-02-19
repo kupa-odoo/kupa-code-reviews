@@ -1,9 +1,9 @@
 /** @odoo-module **/
 
-import { Component } from "@odoo/owl";
-import { formatMonetary } from "@web/views/fields/formatters";
 import { registry } from "@web/core/registry";
+import { formatMonetary } from "@web/views/fields/formatters";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
+import { Component } from "@odoo/owl";
 
 
 export class CertificationTotal extends Component {

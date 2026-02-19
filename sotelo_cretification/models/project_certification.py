@@ -41,18 +41,18 @@ class ProjectCertification(models.Model):
     partner_id = fields.Many2one(
         comodel_name="res.partner",
         string="Customer",
-        tracking=1
+        tracking=True
     )
     partner_invoice_id = fields.Many2one(
         comodel_name="res.partner",
         string="Invoice Address",
-        compute="_compute_partner_invoice_id",
+        compute="_compute_partner_related_fields",
         readonly=False
     )
     partner_shipping_id = fields.Many2one(
         comodel_name="res.partner",
         string="Delivery Address",
-        compute="_compute_partner_shipping_id",
+        compute="_compute_partner_related_fields",
         readonly=False
     )
     date_certification = fields.Datetime(
@@ -70,7 +70,7 @@ class ProjectCertification(models.Model):
     payment_term_id = fields.Many2one(
         comodel_name="account.payment.term",
         string="Payment Terms",
-        compute="_compute_payment_term_id",
+        compute="_compute_partner_related_fields",
         readonly=False,
         domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]"
     )
@@ -100,33 +100,26 @@ class ProjectCertification(models.Model):
     )
 
     @api.depends("partner_id")
-    def _compute_partner_invoice_id(self):
+    def _compute_partner_related_fields(self):
         for certificate in self:
-            certificate.partner_invoice_id = (
-                certificate.partner_id.address_get(["invoice"])["invoice"]
-                if certificate.partner_id
-                else False
-            )
+            partner = certificate.partner_id
 
-    @api.depends("partner_id")
-    def _compute_partner_shipping_id(self):
-        for certificate in self:
-            certificate.partner_shipping_id = (
-                certificate.partner_id.address_get(["delivery"])["delivery"]
-                if certificate.partner_id
-                else False
-            )
+            if partner:
+                addresses = partner.address_get(["invoice", "delivery"])
+                certificate.partner_invoice_id = addresses.get("invoice")
+                certificate.partner_shipping_id = addresses.get("delivery")
+
+                certificate = certificate.with_company(certificate.company_id)
+                certificate.payment_term_id = partner.property_payment_term_id
+            else:
+                certificate.partner_invoice_id = False
+                certificate.partner_shipping_id = False
+                certificate.payment_term_id = False
 
     @api.depends("company_id")
     def _compute_currency_id(self):
         for certificate in self:
             certificate.currency_id = certificate.company_id.currency_id
-
-    @api.depends("partner_id")
-    def _compute_payment_term_id(self):
-        for certificate in self:
-            certificate = certificate.with_company(certificate.company_id)
-            certificate.payment_term_id = certificate.partner_id.property_payment_term_id
 
     def create(self, vals):
         if vals.get("name", self.env._("New")) == self.env._("New"):
@@ -136,7 +129,7 @@ class ProjectCertification(models.Model):
         return super().create(vals)
 
     @api.onchange("project_id")
-    def _onchange_show_update_certification_line(self):
+    def onchange_show_update_certification_line(self):
         self.show_update_certification_line = True
 
     @api.depends('certification_line_ids.accumulated_amount')
@@ -154,14 +147,15 @@ class ProjectCertification(models.Model):
             [
                 ("project_id", "=", self.project_id.id),
                 ("state", "=", "confirmed"),
-                ("id", "!=", self.id)
+                ("id", "!=", self._origin.id)
             ]
         )
 
     @api.depends(
         "certification_line_ids.certification_amount",
         "currency_id",
-        "company_id"
+        "company_id",
+        'project_id'
     )
     def _compute_certification_totals(self):
         for record in self:
@@ -218,7 +212,7 @@ class ProjectCertification(models.Model):
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
-            'name': 'Invoice',
+            'name': self.env._('Invoice'),
             'res_model': 'account.move',
             'view_mode': 'form',
             'res_id': self.certificate_invoice_id.id,
