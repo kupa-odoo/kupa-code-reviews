@@ -46,39 +46,38 @@
                         <t t-foreach="o.certification_line_ids" t-as="line">
                             <tr>
                                 <td class="text-start ps-1">
-                                    <span t-esc="line.sale_id.name"/>
+                                    <span t-field="line.sale_id.name"/>
                                 </td>
                                 <td class="text-start">
-                                    <span t-esc="line.product_id.name"/>
+                                    <span t-field="line.product_id.name"/>
                                 </td>
                                 <td class="text-end pe-2">
-                                    <span t-esc="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom_qty"/>
                                 </td>
                                 <td class="text-end pe-2">
-                                    <span t-esc="line.price_unit"/>
+                                    <span t-field="line.price_unit"/>
                                 </td>
                                 <td class="text-end pe-2">
-                                    <span t-esc="line.discount"/>
-%
+                                    <span t-field="line.discount"/>
                                 </td>
                                 <td class="text-end pe-2">
-                                    <span t-esc="line.net_unit_price"/>
+                                    <span t-field="line.net_unit_price"/>
                                 </td>
                                 <td class="text-end pe-2">
-                                    <span t-esc="line.price_subtotal"/>
+                                    <span t-field="line.price_subtotal"/>
                                 </td>
                                 <td class="text-start">
                                     <span t-esc="dict(line._fields['work_status'].selection).get(line.work_status, '')"/>
                                 </td>
                                 <td class="text-end pe-2">
-                                    <span t-esc="'%.1f' % (line.accumulated_percentage * 100)"/>
+                                     <span t-esc="line.accumulated_percentage * 100" t-options="{'widget': 'float', 'precision': 1}"/>
                                 </td>
                                 <td class="text-end pe-2">
-                                    <span t-esc="line.accumulated_amount"/>
+                                    <span t-field="line.accumulated_amount"/>
                                 </td>
                                 <td class="text-end pe-2">
                                     <t t-if="line.pending_certi_amount">
-                                        <span t-esc="line.pending_certi_amount"/>
+                                        <span t-field="line.pending_certi_amount"/>
                                     </t>
                                     <t t-else="">
                                         <span class="p-2">-</span>
@@ -90,17 +89,17 @@
                             <td colspan="6" class="border-0"></td>
 
                             <td class="text-end pe-2 fw-900 border-0">
-                                <span t-esc="'%.2f' % sum(o.certification_line_ids.mapped('price_subtotal'))"/>
+                                 <span t-esc="sum(o.certification_line_ids.mapped('price_subtotal'))" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                             </td>
 
                             <td colspan="2" class="border-0"></td>
 
                             <td class="text-end pe-2 fw-900 border-0">
-                                <span t-esc="'%.2f' % sum(o.certification_line_ids.mapped('accumulated_amount'))"/>
+                                <span t-esc="sum(o.certification_line_ids.mapped('accumulated_amount'))" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                             </td>
 
                             <td class="text-end pe-2 fw-900 border-0">
-                                <span t-esc="'%.2f' % sum(o.certification_line_ids.mapped('pending_certi_amount'))"/>
+                                <span t-esc="sum(o.certification_line_ids.mapped('pending_certi_amount'))" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                             </td>
                         </tr>
                     </tbody>

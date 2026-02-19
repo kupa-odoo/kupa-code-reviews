@@ -11,6 +11,8 @@
                 <field name="project_id"/>
                 <field name="payment_term_id"/>
                 <field name="company_id" groups="base.group_multi_company" invisible="1"/>
+                <field name="pending_total_amount" sum="Total Pending Amount"/>
+                <field name="accumulated_certification_total_amount" sum="Total Accumulated"/>
                 <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state == 'confirmed'" />
             </list>
         </field>
@@ -23,7 +25,8 @@
             <form string="Project Certification">
                 <header>
                     <field name="state" widget="statusbar"/>
-                    <button string="Create Invoice" invisible="state == 'confirmed'" name="action_create_invoice" type="object" class="btn-primary"/>
+                    <button string="Create Invoice" invisible="state in ['confirmed', 'draft']" name="action_create_invoice" type="object" class="btn-primary"/>
+                    <button string="Certfication Ready" invisible="state in ['confirmed', 'ready']" name="action_mark_certfication_ready" type="object" class="btn-primary"/>
                     <button string="Print" name="%(action_report_project_certification)d" type="action"/>
                 </header>
                 <sheet>
@@ -55,16 +58,25 @@
                             </div>
                             <field name="date_certification" readonly="state == 'confirmed'" nolabel="1"/>
                             <field name="payment_term_id" readonly="state == 'confirmed'" placeholder="Immediate" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="billable_status"/>
                             <field name="currency_id" invisible="1" />
+                            <field name="is_first_certification" invisible="1"/>
                         </group>
                     </group>
                     <notebook>
                         <page name="certification_lines" string="Certification Lines">
-                            <field name="certification_line_ids" readonly="state == 'confirmed'">
-                                <list editable="bottom" create="false">
+                            <field name="certification_line_ids" widget="product_label_section_and_note_field_o2m" readonly="state in ['confirmed', 'ready']" >
+                                <list editable="bottom">
+                                    <control>
+                                        <create name="add_product_control" string="Add a product"/>
+                                        <create name="add_section_control" string="Add a section" context="{'default_display_type': 'line_section'}"/>
+                                    </control>
+                                    <field name="display_type" column_invisible="True"/>
+                                    <field name="sequence" widget="handle" />
                                     <field name="currency_id" column_invisible="1"/>
                                     <field name="sale_id"/>
-                                    <field name="product_id"/>
+                                    <field name="product_id" widget="product_label_section_and_note_field" optional="conditional"/>
+                                    <field name="name" widget="section_and_note_text" optional="show"/>
                                     <field name="product_uom_qty"/>
                                     <field name="price_unit"/>
                                     <field name="discount"/>
@@ -73,23 +85,25 @@
                                     <field name="work_status"/>
                                     <field name="certification_percentage" widget="percentage"/>
                                     <field name="certification_uds"/>
-                                    <field name="certification_amount" sum="Certification Amount"/>
-                                    <field name="accumulated_percentage" widget="percentage"/>
-                                    <field name="accumulated_uds" />
+                                    <field name="certification_amount" sum="Certification Amount" optional="hide" />
+                                    <field name="accumulated_percentage" widget="percentage" optional="hide" />
+                                    <field name="accumulated_uds" optional="hide" />
                                     <field name="accumulated_amount" sum="Accumulated Amount" />
-                                    <field name="pending_ceri_percentage" widget="percentage" />
-                                    <field name="pending_certi_uds" />
+                                    <field name="pending_ceri_percentage" widget="percentage" optional="hide" />
+                                    <field name="pending_certi_uds" optional="hide" />
                                     <field name="pending_certi_amount" sum="Pending Certi Amount" />
-                                    <field name="prev_work_status"/>
-                                    <field name="prev_certification_percentage" widget="percentage" />
-                                    <field name="prev_certification_uds" />
-                                    <field name="prev_certification_amount" sum="Prev Certification Amount"/>
-                                    <field name="prev_accumulated_percentage" widget="percentage" />
-                                    <field name="prev_accumulated_uds" />
-                                    <field name="prev_accumulated_amount" sum="Prev Accumulated Amount"/>
-                                    <field name="prev_pending_certi_percentage" widget="percentage" />
-                                    <field name="prev_pending_certi_uds" />
-                                    <field name="prev_pending_certi_amount" sum="Prev Pending Certi Amount"/>
+                                    <field name="prev_work_status" optional="hide" />
+                                    <field name="prev_certification_percentage" widget="percentage" optional="hide" />
+                                    <field name="prev_certification_uds" optional="hide" />
+                                    <field name="prev_certification_amount" sum="Prev Certification Amount" optional="hide"/>
+                                    <field name="prev_accumulated_percentage" widget="confirm_percentage" optional="hide" />
+                                    <field name="is_prev_accumulated_manual" column_invisible="True"/>
+                                    <field name="is_prev_accumulated_changed" column_invisible="True"/>
+                                    <field name="prev_accumulated_uds" optional="hide" />
+                                    <field name="prev_accumulated_amount" sum="Prev Accumulated Amount" optional="hide"/>
+                                    <field name="prev_pending_certi_percentage" widget="percentage" optional="hide" />
+                                    <field name="prev_pending_certi_uds" optional="hide" />
+                                    <field name="prev_pending_certi_amount" sum="Prev Pending Certi Amount" optional="hide"/>
                                 </list>
                             </field>
                             <group col="6">
@@ -131,5 +145,9 @@
         <field name="res_model">project.certification</field>
         <field name="view_mode">list,form</field>
         <field name="search_view_id" ref="view_project_certification_search"/>
+        <field name="context">{'search_default_project': 1}</field>
     </record>
+
+    <menuitem id="menu_certification_root" name="Certifications" sequence="71" />
+    <menuitem id="menu_project_certification" name="Project Certifications" parent="menu_certification_root" action="action_project_certification" sequence="1" />
 </odoo>

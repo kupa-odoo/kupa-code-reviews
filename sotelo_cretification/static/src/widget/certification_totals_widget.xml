@@ -6,7 +6,7 @@
             <tbody>
                 <tr>
                     <td class="py-1 pe-4">
-                            Total Cerification Amount
+                        Total Cerification Amount
                     </td>
                     <td class="text-end py-1">
                         <strong>
@@ -19,7 +19,7 @@
                     <t t-foreach="totals.previous_certifications" t-as="line" t-key="line.name">
                         <tr>
                             <td class="py-1 pe-4">
-                                    Deduction Previous Invoice <t t-esc="line.name"/>
+                                Deduction Previous Invoice <t t-esc="line.name"/>
                             </td>
                             <td class="text-end text-danger py-1">
                                 <strong>
@@ -32,7 +32,7 @@
 
                 <tr class="border-top">
                     <td class="py-1 pe-4">
-                           Total to be invoiced
+                        Total to be invoiced
                     </td>
                     <td class="text-end fw-bold py-1">
                         <strong>

@@ -8,6 +8,11 @@ class ProjectProject(models.Model):
 
     certification_product = fields.Many2one("product.product")
     invoice_deduction_product = fields.Many2one("product.product")
+    certification_ids = fields.One2many(
+        "project.certification",
+        "project_id",
+        string="Certifications"
+    )
 
     def action_view_certifications(self):
         self.ensure_one()

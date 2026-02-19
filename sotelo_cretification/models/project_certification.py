@@ -1,5 +1,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
+from markupsafe import Markup
+
 from odoo import api, Command, fields, models
 from odoo.exceptions import UserError
 
@@ -19,6 +21,7 @@ class ProjectCertification(models.Model):
     state = fields.Selection(
         selection=[
             ("draft", "Draft"),
+            ("ready", "Certification Ready"),
             ("confirmed", "Confirmed")
         ],
         string="Status",
@@ -28,10 +31,8 @@ class ProjectCertification(models.Model):
         default="draft"
     )
     currency_id = fields.Many2one(
-        comodel_name="res.currency",
-        compute="_compute_currency_id",
-        store=True,
-        ondelete="restrict"
+        related="company_id.currency_id",
+        store=True
     )
     company_id = fields.Many2one(
         comodel_name="res.company",
@@ -81,8 +82,10 @@ class ProjectCertification(models.Model):
     )
     show_update_certification_line = fields.Boolean()
     accumulated_certification_total_amount = fields.Monetary(
+        string="Total Accumulated",
         compute="_compute_accumulated_certification_total_amount",
-        store=True
+        store=True,
+        currency_field="currency_id"
     )
     certification_totals = fields.Json(
         compute="_compute_certification_totals",
@@ -98,12 +101,30 @@ class ProjectCertification(models.Model):
         default="0.0",
         currency_field="currency_id"
     )
+    pending_total_amount = fields.Monetary(
+        string=" Total Pending Amount",
+        compute="_compute_pending_total_amount",
+        store=True,
+        currency_field="currency_id"
+    )
+    billable_status = fields.Selection(
+        [
+            ("billable", "Billable"),
+            ("non_billable", "Non-Billable")
+        ],
+        string="Billing Type",
+        default="non_billable",
+        tracking=True
+    )
+    is_first_certification = fields.Boolean(
+        string="Is First Certification",
+        default=False
+    )
 
     @api.depends("partner_id")
     def _compute_partner_related_fields(self):
         for certificate in self:
             partner = certificate.partner_id
-
             if partner:
                 addresses = partner.address_get(["invoice", "delivery"])
                 certificate.partner_invoice_id = addresses.get("invoice")
@@ -116,17 +137,18 @@ class ProjectCertification(models.Model):
                 certificate.partner_shipping_id = False
                 certificate.payment_term_id = False
 
-    @api.depends("company_id")
-    def _compute_currency_id(self):
-        for certificate in self:
-            certificate.currency_id = certificate.company_id.currency_id
-
-    def create(self, vals):
-        if vals.get("name", self.env._("New")) == self.env._("New"):
-            vals["name"] = self.env["ir.sequence"].with_company(
-                vals.get("company_id")
-            ).next_by_code("project.certification") or self.env._("New")
-        return super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get("name", self.env._("New")) == self.env._("New"):
+                vals["name"] = self.env["ir.sequence"].with_company(vals.get('company_id')).next_by_code("project.certification") or self.env._("New")
+        records = super().create(vals_list)
+        for rec in records:
+            if rec.project_id:
+                rec.is_first_certification = len(rec.project_id.certification_ids) == 1
+            else:
+                rec.is_first_certification = False
+        return records
 
     @api.onchange("project_id")
     def onchange_show_update_certification_line(self):
@@ -139,20 +161,26 @@ class ProjectCertification(models.Model):
                 record.certification_line_ids.mapped("accumulated_amount")
             )
 
+    @api.depends('certification_line_ids.pending_certi_amount')
+    def _compute_pending_total_amount(self):
+        for record in self:
+            record.pending_total_amount = sum(
+                record.certification_line_ids.mapped('pending_certi_amount')
+            )
+
     def _get_previous_confirmed_certifications(self):
         self.ensure_one()
         if not self.project_id:
             return self.env["project.certification"]
-        return self.env["project.certification"].search(
-            [
-                ("project_id", "=", self.project_id.id),
-                ("state", "=", "confirmed"),
-                ("id", "!=", self._origin.id)
-            ]
-        )
+        return self.project_id.certification_ids.filtered_domain([
+            ("state", "=", "confirmed"),
+            ("id", "<", self._origin.id),
+        ])
 
     @api.depends(
+        "project_id.certification_ids.state",
         "certification_line_ids.certification_amount",
+        "project_id.certification_ids.total_to_invoice",
         "currency_id",
         "company_id",
         'project_id'
@@ -161,11 +189,11 @@ class ProjectCertification(models.Model):
         for record in self:
             if record.state != 'confirmed':
                 current_amount = record.accumulated_certification_total_amount or 0.0
-                previous_confirmed_certs = self._get_previous_confirmed_certifications()
+                previous_confirmed_certs = record._get_previous_confirmed_certifications()
                 previous_certifications = [
                     {
                         "name": cert.certificate_invoice_id.name or cert.name,
-                        "amount": cert.total_to_invoice,
+                        "amount": cert.total_to_invoice
                     }
                     for cert in previous_confirmed_certs
                 ]
@@ -180,7 +208,8 @@ class ProjectCertification(models.Model):
         for record in self:
             if not record.project_id:
                 record.certification_line_ids = [Command.clear()]
-                return
+                continue
+
             sale_orders = (
                 record.project_id._fetch_sale_order_items(
                     {"project.task": [("is_closed", "=", False)]}
@@ -190,8 +219,21 @@ class ProjectCertification(models.Model):
             )
             record.partner_id = record.project_id.partner_id
             certificate_lines = [Command.clear()]
-            sale_lines = sale_orders.mapped("order_line")
-            for line in sale_lines:
+            for line in sale_orders.mapped("order_line"):
+                if line.display_type == 'line_section':
+                    certificate_lines.append(
+                        Command.create({
+                            "display_type": 'line_section',
+                            "name": line.name,
+                            "sale_id": line.order_id.id,
+                            "sequence": line.sequence,
+                        })
+                    )
+                    continue
+
+                if line.display_type == 'line_note':
+                    continue
+
                 certificate_lines.append(
                     Command.create(
                         {
@@ -246,7 +288,7 @@ class ProjectCertification(models.Model):
             )
         return invoice_lines
 
-    def _prepare_invoice_vals(self):
+    def _prepare_invoice_vals(self, previous_certs):
         project = self.project_id
         if not project.certification_product:
             raise UserError(
@@ -256,13 +298,7 @@ class ProjectCertification(models.Model):
             raise UserError(
                 self.env._("Please configure Invoice Deduction Product on the project.")
             )
-        previous_confirmed_certs = self.env["project.certification"].search(
-            [
-                ("project_id", "=", project.id),
-                ("state", "=", "confirmed")
-            ]
-        )
-        invoice_lines = self._prepare_invoice_lines(previous_confirmed_certs)
+        invoice_lines = self._prepare_invoice_lines(previous_certs)
         return {
             "move_type": "out_invoice",
             "partner_id": self.partner_invoice_id.id or self.partner_id.id,
@@ -281,7 +317,7 @@ class ProjectCertification(models.Model):
         previous_amount = sum(
             previous_certs.mapped("total_to_invoice")
         )
-        invoice_vals = self._prepare_invoice_vals()
+        invoice_vals = self._prepare_invoice_vals(previous_certs)
         invoice = self.env["account.move"].create(invoice_vals)
         self.write({
             "total_to_invoice": self.accumulated_certification_total_amount - previous_amount,
@@ -295,3 +331,37 @@ class ProjectCertification(models.Model):
             "res_id": invoice.id,
             "view_mode": "form"
         }
+
+    def action_mark_certfication_ready(self):
+        for record in self:
+            record.state = "ready"
+
+    def write(self, vals):
+        if 'billable_status' not in vals:
+            return super().write(vals)
+        old_status_map = {rec.id: rec.billable_status for rec in self}
+        res = super().write(vals)
+        for rec in self.filtered(lambda r: old_status_map.get(r.id) != r.billable_status):
+            rec._post_billable_status_change(old_status_map[rec.id], rec.billable_status)
+        return res
+
+    def _post_billable_status_change(self, old_status, new_status):
+        self.ensure_one()
+        users = self.company_id.certification_user_ids
+        if not users:
+            return
+
+        selection = dict(self._fields['billable_status'].selection)
+        old_label = selection.get(old_status, old_status)
+        new_label = selection.get(new_status, new_status)
+
+        message = Markup(
+            f"<p><strong>Billing Status Updated</strong><br/>"
+            f"Certification <strong>{self.name}</strong>: "
+            f"{old_label} → {new_label}<br/>"
+            f"<strong>Updated by:</strong> {self.env.user.name}</p>"
+        )
+        self.message_post(
+            body=message,
+            partner_ids=users.mapped('partner_id').ids
+        )

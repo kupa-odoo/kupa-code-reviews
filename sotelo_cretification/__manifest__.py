@@ -34,14 +34,16 @@ sotelo_certification |  TaskID: 5862655
         'views/account_move_views.xml',
         'views/project_certification_views.xml',
         'views/project_project_views.xml',
+        'views/res_config_settings_views.xml',
     ],
     "assets": {
         "web.assets_backend": [
-            "sotelo_cretification/static/src/widget/certification_totals_widget.js",
-            "sotelo_cretification/static/src/widget/certification_totals_widget.xml",
+            "sotelo_cretification/static/src/widget/**/*"
         ],
         'web.report_assets_common': [
             'sotelo_cretification/static/src/css/report.scss',
         ],
     },
+
+    'application': True
 }
