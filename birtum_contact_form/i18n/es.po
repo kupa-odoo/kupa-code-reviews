@@ -1,0 +1,689 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* birtum_contact_form
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-25 05:10+0000\n"
+"PO-Revision-Date: 2026-02-25 05:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_specialty__active
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_type__active
+#: model:ir.model.fields,field_description:birtum_contact_form.field_company_group__active
+#: model:ir.model.fields,field_description:birtum_contact_form.field_discharge_reason__active
+#: model:ir.model.fields.selection,name:birtum_contact_form.selection__res_partner__customer_type__active
+msgid "Active"
+msgstr "Activa"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_partner_form_inherit_birtum_contact_form
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity__activity_type_id
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity_license__activity_id
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Activity Category"
+msgstr "Categoría de actividad"
+
+#. module: birtum_contact_form
+#: model:ir.model,name:birtum_contact_form.model_partner_activity_license
+msgid "Activity License"
+msgstr "Licencia de actividad"
+
+#. module: birtum_contact_form
+#: model:ir.actions.act_window,name:birtum_contact_form.action_activity_speciality
+#: model:ir.model,name:birtum_contact_form.model_activity_specialty
+#: model:ir.ui.menu,name:birtum_contact_form.menu_activity_speciality
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Activity Speciality"
+msgstr "Especialidad de actividad"
+
+#. module: birtum_contact_form
+#: model:ir.actions.act_window,name:birtum_contact_form.action_activity_type
+#: model:ir.model,name:birtum_contact_form.model_activity_type
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_type__name
+#: model:ir.ui.menu,name:birtum_contact_form.menu_activity_type
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Activity Type"
+msgstr "Tipo de actividad"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__is_associate
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__is_associate
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Associate"
+msgstr "Asociada"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__associate_activity_ids
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__associate_activity_ids
+msgid "Associate Activities"
+msgstr "Actividades asociadas"
+
+#. module: birtum_contact_form
+#: model:ir.model,name:birtum_contact_form.model_partner_activity
+msgid "Associate Activity"
+msgstr "Actividad asociada"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__associate_number
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__associate_number
+msgid "Associate Number"
+msgstr "Número de asociado"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Associate Set"
+msgstr "Conjunto de asociados"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Associate Unset"
+msgstr "Asociada no establecida"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_partner_form_inherit_birtum_contact_form
+msgid "Associated"
+msgstr "Asociada"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__cnae
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__cnae
+msgid "CNAE"
+msgstr ""
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity__category
+msgid "Category"
+msgstr "Categoría"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__channel_manager
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Channel Manager"
+msgstr "Administrador de canales"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Channel Manager = No"
+msgstr "Administrador de canales = No"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Channel Manager = Yes"
+msgstr "Administrador de canales = Sí"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields.selection,name:birtum_contact_form.selection__partner_activity_license__license_name__city
+msgid "City Council License"
+msgstr "Licencia del Ayuntamiento"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__customer_type
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__customer_type
+msgid "Client Type"
+msgstr "Tipo de cliente"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__commercial_registration
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__commercial_registration
+msgid "Commercial Registration"
+msgstr "Registro Comercial"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_partner_form_inherit_birtum_contact_form
+msgid "Communication"
+msgstr "Comunicación"
+
+#. module: birtum_contact_form
+#: model:ir.model,name:birtum_contact_form.model_company_group
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__company_group
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__company_group
+#: model:ir.ui.menu,name:birtum_contact_form.menu_company_group
+msgid "Company Group"
+msgstr "Grupo de empresas"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__company_group_number
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__company_group_number
+msgid "Company Group Number"
+msgstr "Número de grupo de empresa"
+
+#. module: birtum_contact_form
+#: model:ir.model.constraint,message:birtum_contact_form.constraint_company_group_check_unique_name
+msgid "Company Group must be unique."
+msgstr "El grupo de empresas debe ser único."
+
+#. module: birtum_contact_form
+#: model:ir.actions.act_window,name:birtum_contact_form.action_company_group
+msgid "Company Groups"
+msgstr "Grupos de empresas"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__company_s_s_number
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__company_s_s_number
+msgid "Company S.S. number"
+msgstr "Número de la S. S. empresa"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_company_group__name
+msgid "Compnay Group Name"
+msgstr "Nombre del grupo empresarial"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__connected_fns
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Connected To FNS"
+msgstr "Conectado a FNS"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Connected To FNS = No"
+msgstr "Conectado a FNS = No"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Connected To FNS = Yes"
+msgstr "Conectado a FNS = Sí"
+
+#. module: birtum_contact_form
+#: model:ir.model,name:birtum_contact_form.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_specialty__create_uid
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_type__create_uid
+#: model:ir.model.fields,field_description:birtum_contact_form.field_company_group__create_uid
+#: model:ir.model.fields,field_description:birtum_contact_form.field_discharge_reason__create_uid
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity__create_uid
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity_license__create_uid
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_specialty__create_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_type__create_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_company_group__create_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_discharge_reason__create_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity__create_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity_license__create_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__agreement
+msgid "Description"
+msgstr "Descripción"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__discharge_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__discharge_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__discharge_date
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Discharge Date"
+msgstr "Fecha de alta"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Discharge Last Month"
+msgstr "Alta el mes pasado"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Discharge Last Week"
+msgstr "Alta la semana pasada"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Discharge Last Year"
+msgstr "Alta el año pasado"
+
+#. module: birtum_contact_form
+#: model:ir.model,name:birtum_contact_form.model_discharge_reason
+#: model:ir.model.fields,field_description:birtum_contact_form.field_discharge_reason__name
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__discharge_reason
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__discharge_reason
+#: model:ir.ui.menu,name:birtum_contact_form.menu_discharge_reason
+msgid "Discharge Reason"
+msgstr "Motivo del alta"
+
+#. module: birtum_contact_form
+#: model:ir.actions.act_window,name:birtum_contact_form.action_discharge_reason
+msgid "Discharge Reasons"
+msgstr "Razones del alta"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_specialty__display_name
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_type__display_name
+#: model:ir.model.fields,field_description:birtum_contact_form.field_company_group__display_name
+#: model:ir.model.fields,field_description:birtum_contact_form.field_discharge_reason__display_name
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity__display_name
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity_license__display_name
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__display_name
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__extra_beds
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__extra_beds
+msgid "Extra Beds"
+msgstr "Camas Supletorias"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__file_number
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__file_number
+msgid "File Number"
+msgstr "Número de archivo"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__freelance
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__freelance
+msgid "Freelance"
+msgstr "Independiente"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__freelance_s_s_number
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__freelance_s_s_number
+msgid "Freelance S.S. number"
+msgstr "Número de la S. S. autónomos"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_partner_form_inherit_birtum_contact_form
+msgid "Generate Associate Number."
+msgstr "Generar número de asociado."
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_partner_form_inherit_birtum_contact_form
+msgid "Generator"
+msgstr "Generador"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity_license__grant_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__grant_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__grant_date
+msgid "Grant Date"
+msgstr "Fecha de concesión"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields.selection,name:birtum_contact_form.selection__partner_activity_license__status__granted
+#: model:ir.model.fields.selection,name:birtum_contact_form.selection__res_partner__status__granted
+msgid "Granted"
+msgstr "Concedida"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__group
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__group
+msgid "Group"
+msgstr "Grupo"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_company_group__group_number
+msgid "Group Number"
+msgstr "Número de grupo"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields.selection,name:birtum_contact_form.selection__partner_activity_license__license_name__health
+msgid "Health License"
+msgstr "Licencia Sanitaria"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__iae
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__iae
+msgid "IAE"
+msgstr ""
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_specialty__id
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_type__id
+#: model:ir.model.fields,field_description:birtum_contact_form.field_company_group__id
+#: model:ir.model.fields,field_description:birtum_contact_form.field_discharge_reason__id
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity__id
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity_license__id
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__id
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: birtum_contact_form
+#: model:ir.model.fields.selection,name:birtum_contact_form.selection__partner_activity_license__status__in_progress
+#: model:ir.model.fields.selection,name:birtum_contact_form.selection__res_partner__status__in_progress
+msgid "In Progress"
+msgstr "En curso"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields.selection,name:birtum_contact_form.selection__res_partner__customer_type__inactive
+msgid "Inactive"
+msgstr "Inactiva"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_specialty__write_uid
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_type__write_uid
+#: model:ir.model.fields,field_description:birtum_contact_form.field_company_group__write_uid
+#: model:ir.model.fields,field_description:birtum_contact_form.field_discharge_reason__write_uid
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity__write_uid
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity_license__write_uid
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_specialty__write_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_type__write_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_company_group__write_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_discharge_reason__write_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity__write_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity_license__write_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Licenese Number"
+msgstr "Número de licencia"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity_license__license_name
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "License Name"
+msgstr "Nombre de licencia"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity_license__license_number
+msgid "License Number"
+msgstr "Número de licencia"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity_license__status
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "License Status"
+msgstr "Estado de la licencia"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_partner_form_inherit_birtum_contact_form
+msgid "License Type"
+msgstr "Tipo de licencia"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "License: City Council"
+msgstr "Licencia: Ayuntamiento"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "License: Granted"
+msgstr "Licencia: Concedida"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "License: Health Council"
+msgstr "Licencia: Consejo de Salud"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "License: In Progress"
+msgstr "Licencia: En curso"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "License: Tourism Council"
+msgstr "Licencia: Consejo de Turismo"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity__license_ids
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_partner_form_inherit_birtum_contact_form
+msgid "Licenses"
+msgstr "Licencias"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__notes
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__pms
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "PMS"
+msgstr ""
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "PMS = No"
+msgstr ""
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "PMS = Yes"
+msgstr "PMS = Sí"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity__partner_id
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__partner_id
+msgid "Partner"
+msgstr "Pareja"
+
+#. module: birtum_contact_form
+#: model:ir.model,name:birtum_contact_form.model_partner_quality_use
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__quality_use_ids
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__quality_use_ids
+msgid "Partner Quality Use"
+msgstr "Uso de calidad del socio"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__peregrinos_project
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Peregrinos Project"
+msgstr "Proyecto Peregrinos"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Peregrinos Project = No"
+msgstr "Proyecto Peregrinos = No"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Peregrinos Project = Yes"
+msgstr "Proyecto Peregrinos = Sí"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__places
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__places
+msgid "Places"
+msgstr "Lugares"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_partner_form_inherit_birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Quality & Use"
+msgstr "Calidad y uso"
+
+#. module: birtum_contact_form
+#: model:ir.model.constraint,message:birtum_contact_form.constraint_discharge_reason_check_unique_name
+msgid "Reason must be unique."
+msgstr "La razón debe ser única."
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__receive_announcements
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__receive_announcements
+msgid "Receive Announcements"
+msgstr "Recibir anuncios"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__receive_press
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__receive_press
+msgid "Receive Press"
+msgstr "Recibir prensa"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__registration_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__registration_date
+msgid "Registration Date"
+msgstr "Fecha de registro"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__rooms
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__rooms
+msgid "Rooms"
+msgstr "Alojamiento"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__send_magazine
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__send_magazine
+msgid "Send Magazine"
+msgstr "Enviar revista"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__signing_date
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Signing Date"
+msgstr "Fecha de firma"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Signing Last Month"
+msgstr "Firmando el mes pasado"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Signing Last Week"
+msgstr "Firmando la semana pasada"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Signing Last Year"
+msgstr "Firmando el año pasado"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_activity_specialty__name
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity__specialty_id
+msgid "Speciality"
+msgstr "Especialidad"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_activity_license__start_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__start_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__start_date
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_partner_form_inherit_birtum_contact_form
+msgid "Status"
+msgstr "Estado"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__stopped_contract
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__stopped_contract
+msgid "Stopped Contract"
+msgstr "Contrato detenido"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__stopped_contract_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__stopped_contract_date
+msgid "Stopped Contract Date"
+msgstr "Fecha de finalización del contrato"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__terraces
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__terraces
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_partner_form_inherit_birtum_contact_form
+msgid "Terraces"
+msgstr "Terrazas"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__status
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__status
+msgid "Terraces Status"
+msgstr "Estado de las terrazas"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__terraces_type
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__terraces_type
+msgid "Terraces Type"
+msgstr "Tipo de terrazas"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__third_party_company
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__third_party_company
+msgid "Third-party company"
+msgstr "Empresa de terceros"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields.selection,name:birtum_contact_form.selection__partner_activity_license__license_name__tourism
+msgid "Tourism License"
+msgstr "Licencia de Turismo"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Web Alojamiento = No"
+msgstr ""
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Web Alojamiento = Yes"
+msgstr "Web Alojamiento = Sí"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__web_alojamiento_asturias
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Web Alojamiento Asturias"
+msgstr ""
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_partner_quality_use__website_with_fns
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Website With FNS"
+msgstr "Sitio web con FNS"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Website With FNS = No"
+msgstr "Sitio web con FNS = No"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "Website With FNS = Yes"
+msgstr "Sitio web con FNS = Sí"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__whatsapp
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__whatsapp
+msgid "Whatsapp"
+msgstr ""
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__whatsapp_group
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__whatsapp_group
+msgid "Whatsapp Group"
+msgstr "grupo whatsapp"
+
+#. module: birtum_contact_form
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_partner__whatsapp_registration_date
+#: model:ir.model.fields,field_description:birtum_contact_form.field_res_users__whatsapp_registration_date
+msgid "Whatsapp Registration Date"
+msgstr "Fecha de registro de Whatsapp"
+
+#. module: birtum_contact_form
+#: model_terms:ir.ui.view,arch_db:birtum_contact_form.view_res_partner_filter_inherit_birtum_contact_form
+msgid "description"
+msgstr "descripción"

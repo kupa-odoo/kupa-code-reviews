@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="seq_res_partner_associate" model="ir.sequence">
+        <field name="name">Associate Number</field>
+        <field name="code">res.partner.associate</field>
+        <field name="prefix">A</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>

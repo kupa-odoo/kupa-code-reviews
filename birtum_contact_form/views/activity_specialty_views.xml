@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_activity_speciality_list" model="ir.ui.view">
+        <field name="name">activity.speciality.list</field>
+        <field name="model">activity.specialty</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="active" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_activity_speciality_form" model="ir.ui.view">
+        <field name="name">activity.speciality.form</field>
+        <field name="model">activity.specialty</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="active" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_activity_speciality" model="ir.actions.act_window">
+        <field name="name">Activity Speciality</field>
+        <field name="res_model">activity.specialty</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_activity_speciality"
+        name="Activity Speciality"
+        parent="contacts.res_partner_menu_config"
+        action="action_activity_speciality"
+        sequence="13"/>
+</odoo>
