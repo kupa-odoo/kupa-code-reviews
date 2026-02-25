@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_partner_form_inherit_birtum_contact_form" model="ir.ui.view">
+        <field name="name">view.partner.form.inherit.birtum.contact.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">not is_associate</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='image_1920']/.." position="before">
+                <div style="margin-left: 45% !important;" class="d-flex gap-3">
+                    <label for="is_associate" class="mb-0 fw-bold"/>
+                    <field name="is_associate"/>
+                </div>
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                <page name="associated" string="Associated" invisible="not is_associate">
+                    <group>
+                        <group>
+                            <label for="associate_number"/>
+                            <div class="o_row">
+                                <field name="associate_number" readonly="1"/>
+                                <button name="action_generate_associate_number" invisible="associate_number" type="object" string="Generator" help="Generate Associate Number." class="btn-link mb-1 px-0" icon="fa-refresh"/>
+                            </div>
+                            <field name="group" />
+                            <field name="company_group" invisible="not group" options="{'no_create': True}" />
+                            <field name="company_group_number" invisible="not group" />
+                            <field name="places" />
+                            <field name="rooms" />
+                        </group>
+                        <group>
+                            <field name="customer_type" widget="radio" />
+                            <field name="registration_date" />
+                            <field name="commercial_registration" />
+                            <field name="discharge_date" />
+                            <field name="discharge_reason" options="{'no_create': True}" />
+                        </group>
+                    </group>
+                    <group string="Activities">
+                        <field name="associate_activity_ids" mode="list,form" nolabel="1" colspan="2">
+                            <list>
+                                <field name="activity_type_id"/>
+                                <field name="category"/>
+                                <field name="specialty_id"/>
+                                <field name="license_ids" widget="many2many_tags"/>
+                            </list>
+                            <form>
+                                <sheet>
+                                    <group>
+                                        <field name="activity_type_id" options="{'no_create': False}"/>
+                                        <field name="category"/>
+                                        <field name="specialty_id" options="{'no_create': False}"/>
+                                    </group>
+
+                                    <group string="Licenses">
+                                        <field name="license_ids" mode="list">
+                                            <list editable="bottom">
+                                                <field name="license_name" string="License Type"/>
+                                                <field name="license_number"/>
+                                                <field name="status"/>
+                                                <field name="start_date"/>
+                                                <field name="grant_date"/>
+                                            </list>
+                                        </field>
+                                    </group>
+                                </sheet>
+                            </form>
+                        </field>
+                    </group>
+                    <group>
+                        <group name="terraces" string="Terraces">
+                            <field name="terraces" />
+                            <field name="terraces_type" widget="radio" />
+                            <field name="file_number" />
+                            <field name="start_date" />
+                            <field name="grant_date" />
+                            <field name="status" string="Status" />
+                        </group>
+                        <group name="communication" string="Communication">
+                            <field name="receive_press" />
+                            <field name="receive_announcements" />
+                            <field name="whatsapp_registration_date" />
+                            <field name="whatsapp" />
+                            <field name="whatsapp_phone" />
+                            <field name="whatsapp_group" />
+                            <field name="send_magazine" />
+                        </group>
+                    </group>
+                </page>
+                <page name="quality_use" string="Quality &amp; Use" invisible="not is_associate">
+                    <field name="quality_use_ids">
+                        <list editable="bottom">
+                            <field name="agreement"/>
+                            <field name="signing_date"/>
+                            <field name="discharge_date"/>
+                            <field name="connected_fns" widget="boolean_toggle"/>
+                            <field name="channel_manager" widget="boolean_toggle"/>
+                            <field name="pms" widget="boolean_toggle"/>
+                            <field name="website_with_fns" widget="boolean_toggle"/>
+                            <field name="amount" />
+                            <field name="notes"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_property_form_followup_inherit_birtum_contact_form" model="ir.ui.view">
+        <field name="name">view.partner.property.form.followup.inherit.birtum.contact.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account_followup.view_partner_property_form_followup"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='followup_responsible_id']" position="after">
+                <field name="freelance_s_s_number" />
+                <field name="company_s_s_number" />
+                <field name="iae" />
+                <field name="cnae" />
+                <field name="third_party_company" />
+                <field name="freelance" />
+                <field name="stopped_contract" />
+                <field name="stopped_contract_date" />
+                <field name="representative_id" />
+                <field name="representative" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter_inherit_birtum_contact_form" model="ir.ui.view">
+        <field name="name">res.partner.search.inherit.birtum.contact.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search//field[@name='email']" position="after">
+                <field name="associate_activity_ids" string="Activity Type" filter_domain="[('associate_activity_ids.activity_type_id', 'ilike', self)]" />
+                <field name="associate_activity_ids" string="Activity Speciality" filter_domain="[('associate_activity_ids.specialty_id', 'ilike', self)]" />
+
+                <field name="quality_use_ids" string="description" filter_domain="[('quality_use_ids.agreement', 'ilike', self)]"/>
+                <field name="quality_use_ids" string="Notes" filter_domain="[('quality_use_ids.notes', 'ilike', self)]"/>
+                <field name="associate_activity_ids" string="Licenese Number" filter_domain="[('associate_activity_ids.license_ids.license_number', 'ilike', self)]"/>
+                <field name="associate_activity_ids" string="Activity Category" filter_domain="[('associate_activity_ids.category', 'ilike', self)]"/>
+            </xpath>
+
+            <xpath expr="//search/separator[last()]" position="after">
+                <filter string="Associate Set" name="associate_true" domain="[('is_associate', '=', True)]"/>
+                <filter string="Associate Unset" name="associate_false" domain="[('is_associate', '=', False)]"/>
+
+                <separator string="License Name"/>
+                <filter string="License: City Council" name="license_city" domain="[('associate_activity_ids.license_ids.license_name','=','city')]"/>
+                <filter string="License: Tourism Council" name="license_tourism" domain="[('associate_activity_ids.license_ids.license_name','=','tourism')]"/>
+                <filter string="License: Health Council" name="license_hralth" domain="[('associate_activity_ids.license_ids.license_name','=','health')]"/>
+
+                <separator string="License Status"/>
+                <filter string="License: In Progress" name="license_in_progress" domain="[('associate_activity_ids.license_ids.status','=','in_progress')]"/>
+                <filter string="License: Granted" name="license_granted" domain="[('associate_activity_ids.license_ids.status','=','granted')]"/>
+
+                <separator string="Quality &amp; Use"/>
+
+                <separator string="Signing Date"/>
+                <filter string="Signing Last Week" name="week" domain="[('quality_use_ids.signing_date', '&gt;', 'today -7d')]"/>
+                <filter string="Signing Last Month" name="month" domain="[('quality_use_ids.signing_date', '&gt;', 'today -30d')]"/>
+                <filter string="Signing Last Year" name="year" domain="[('quality_use_ids.signing_date', '&gt;', 'today -365d')]"/>
+
+                <separator string="Discharge Date"/>
+                <filter string="Discharge Last Week" name="week" domain="[('quality_use_ids.discharge_date', '&gt;', 'today -7d')]"/>
+                <filter string="Discharge Last Month" name="month" domain="[('quality_use_ids.discharge_date', '&gt;', 'today -30d')]"/>
+                <filter string="Discharge Last Year" name="year" domain="[('quality_use_ids.discharge_date', '&gt;', 'today -365d')]"/>
+
+                <separator string="Connected To FNS"/>
+                <filter string="Connected To FNS = Yes" name="connected_fns_yes" domain="[('quality_use_ids.connected_fns','=',True)]"/>
+                <filter string="Connected To FNS = No" name="connected_fns_no" domain="[('quality_use_ids.connected_fns','=',False)]"/>
+
+                <separator string="Channel Manager"/>
+                <filter string="Channel Manager = Yes" name="channel_manager_yes" domain="[('quality_use_ids.channel_manager','=',True)]"/>
+                <filter string="Channel Manager = No" name="channel_manager_no" domain="[('quality_use_ids.channel_manager','=',False)]"/>
+
+                <separator string="PMS"/>
+                <filter string="PMS = Yes" name="pms_yes" domain="[('quality_use_ids.pms','=',True)]"/>
+                <filter string="PMS = No" name="pms_no" domain="[('quality_use_ids.pms','=',False)]"/>
+
+                <separator string="Website With FNS"/>
+                <filter string="Website With FNS = Yes" name="website_fns_yes" domain="[('quality_use_ids.website_with_fns','=',True)]"/>
+                <filter string="Website With FNS = No" name="website_fns_no" domain="[('quality_use_ids.website_with_fns','=',False)]"/>
+            </xpath>
+
+            <xpath expr="//group[@name='group_by']" position="inside">
+                <filter string="Associate" name="group_by_associate" context="{'group_by': 'is_associate'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+birtum_contact_form.access_partner_quality_use,access_partner_quality_use,birtum_contact_form.model_partner_quality_use,base.group_user,1,1,1,1
+birtum_contact_form.access_company_group,access_company_group,birtum_contact_form.model_company_group,base.group_user,1,1,1,1
+birtum_contact_form.access_discharge_reason,access_discharge_reason,birtum_contact_form.model_discharge_reason,base.group_user,1,1,1,1
+birtum_contact_form.access_partner_activity,access_partner_activity,birtum_contact_form.model_partner_activity,base.group_user,1,1,1,1
+birtum_contact_form.access_partner_activity_license,access_partner_activity_license,birtum_contact_form.model_partner_activity_license,base.group_user,1,1,1,1
+birtum_contact_form.access_activity_type,access_activity_type,birtum_contact_form.model_activity_type,base.group_user,1,1,1,1
+birtum_contact_form.access_activity_specialty,access_activity_specialty,birtum_contact_form.model_activity_specialty,base.group_user,1,1,1,1
