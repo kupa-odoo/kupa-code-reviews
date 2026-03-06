@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="installation_view_form_inhetit_nalios_contact_invoice" model="ir.ui.view">
+        <field name="name">installation.view.form.inhetir.nalios.contact.invoice</field>
+        <field name="model">installations</field>
+        <field name="inherit_id" ref="dousseramonage_custos.installation_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='standard_work_ids']//field[@name='product_id']" position="before">
+                <field name="sequence" widget="handle" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
