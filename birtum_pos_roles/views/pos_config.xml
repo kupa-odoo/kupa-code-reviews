@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_config_form_view_inherit_birtum_pos_roles" model="ir.ui.view">
+        <field name="name">pos.config.form.view.inherit.birtum.pos.roles</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="pos_hr.pos_config_form_view_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='advanced_employee_ids']/.." position="after">
+                <div class="row">
+                    <label for="sales_assistant_ids" string="Sales Assistant" class="col-lg-5 o_light_label" />
+                    <field name="sales_assistant_ids" widget="many2many_tags" placeholder="All Employees" domain="[('company_id', '=', company_id)]" />
+                </div>
+            </xpath>
+
+            <xpath expr="//field[@name='basic_employee_ids']/.." position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='minimal_employee_ids']/.." position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
