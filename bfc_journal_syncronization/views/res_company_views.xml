@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_company_form_inherit_bfc_journal_syncronization" model="ir.ui.view">
+        <field name="name">res.company.form.inherit.bfc.journal.syncronization</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="model">res.company</field>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button
+                        name="prepare_journal_parent_child_relation"
+                        type="object"
+                        class="btn-primary"
+                        string="Map Company Journals"
+                        invisible="not is_master_company"
+                        groups="bfc_master_company_coa_sync.group_account_sync"/>
+                    </header>
+            </xpath>
+        </field>
+    </record>
+</odoo>

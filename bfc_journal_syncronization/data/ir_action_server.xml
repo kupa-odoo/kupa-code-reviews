@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record model="ir.actions.server" id="action_sync_company_accounts">
+        <field name="name">Sync Journals with Master Company</field>
+        <field name="model_id" ref="base.model_res_company"/>
+        <field name="binding_model_id" ref="account.model_res_company"/>
+        <field name="state">code</field>
+        <field name="code">
+if records:
+    action = records.sync_with_master_company_journals()
+        </field>
+    </record>
+</odoo>

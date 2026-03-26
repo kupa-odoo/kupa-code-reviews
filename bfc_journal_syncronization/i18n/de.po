@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bfc_journal_syncronization
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-26 13:22+0000\n"
+"PO-Revision-Date: 2026-03-26 13:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bfc_journal_syncronization
+#: model:ir.model.fields,field_description:bfc_journal_syncronization.field_account_journal__child_journal_ids
+msgid "Child journals"
+msgstr "Kindertagebücher"
+
+#. module: bfc_journal_syncronization
+#: model:ir.model.fields,field_description:bfc_journal_syncronization.field_res_company__journal_ids
+msgid "Comapny Journals"
+msgstr "Firmenzeitschriften"
+
+#. module: bfc_journal_syncronization
+#: model:ir.model,name:bfc_journal_syncronization.model_res_company
+msgid "Companies"
+msgstr "Unternehmen"
+
+#. module: bfc_journal_syncronization
+#: model:ir.model.fields,field_description:bfc_journal_syncronization.field_account_journal__display_name
+#: model:ir.model.fields,field_description:bfc_journal_syncronization.field_res_company__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: bfc_journal_syncronization
+#: model:ir.model.fields,field_description:bfc_journal_syncronization.field_account_journal__id
+#: model:ir.model.fields,field_description:bfc_journal_syncronization.field_res_company__id
+msgid "ID"
+msgstr ""
+
+#. module: bfc_journal_syncronization
+#: model:ir.model,name:bfc_journal_syncronization.model_account_journal
+msgid "Journal"
+msgstr ""
+
+#. module: bfc_journal_syncronization
+#. odoo-python
+#: code:addons/bfc_journal_syncronization/models/res_company.py:0
+msgid ""
+"Journal created but Default Income Account were not synchronized because "
+"Account is missing for this company."
+msgstr ""
+"Das Journal wurde erstellt, aber das Standard-Einnahmenkonto wurde nicht "
+"synchronisiert, da für dieses Unternehmen kein Konto existiert."
+
+#. module: bfc_journal_syncronization
+#: model_terms:ir.ui.view,arch_db:bfc_journal_syncronization.view_company_form_inherit_bfc_journal_syncronization
+msgid "Map Company Journals"
+msgstr "Firmenzeitschriften zuordnen"
+
+#. module: bfc_journal_syncronization
+#: model:ir.model.fields,field_description:bfc_journal_syncronization.field_account_journal__has_master_company
+msgid "Master company Account"
+msgstr "Hauptunternehmenskonto"
+
+#. module: bfc_journal_syncronization
+#: model:ir.model.fields,field_description:bfc_journal_syncronization.field_account_journal__parent_journal_id
+msgid "Parent Journal"
+msgstr "Elterntagebuch"
+
+#. module: bfc_journal_syncronization
+#. odoo-python
+#: code:addons/bfc_journal_syncronization/models/account_journal.py:0
+#: code:addons/bfc_journal_syncronization/models/res_company.py:0
+msgid "Please define master company first!"
+msgstr "Bitte definieren Sie zuerst das Hauptunternehmen!"
+
+#. module: bfc_journal_syncronization
+#: model_terms:ir.ui.view,arch_db:bfc_journal_syncronization.view_account_journal_form_bfc_journal_synchronization
+msgid "Sync All Journals"
+msgstr "Alle Journale synchronisieren"
+
+#. module: bfc_journal_syncronization
+#: model:ir.actions.server,name:bfc_journal_syncronization.action_sync_company_accounts
+msgid "Sync Journals with Master Company"
+msgstr "Journale mit Masterfirma synchronisieren"
+
+#. module: bfc_journal_syncronization
+#. odoo-python
+#: code:addons/bfc_journal_syncronization/models/account_journal.py:0
+msgid "Sync allowed only for Sale, Purchase and Miscellaneous journals."
+msgstr ""
+"Synchronisierung nur für Verkaufs-, Einkaufs- und Sonstige Journale "
+"zulässig."
+
+#. module: bfc_journal_syncronization
+#. odoo-python
+#: code:addons/bfc_journal_syncronization/models/account_journal.py:0
+msgid "This action is allowed only on Journl belonging to the Master Company."
+msgstr ""
+"Diese Aktion ist nur auf Journalen zulässig, die der Mastergesellschaft "
+"gehören."
