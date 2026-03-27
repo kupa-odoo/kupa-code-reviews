@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_sync_partner_accounts" model="ir.actions.server">
+        <field name="name">Sync Partner Accounts</field>
+        <field name="model_id" ref="product.model_res_partner"/>
+        <field name="binding_model_id" ref="product.model_res_partner"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+if env.company.is_master_company:
+    if records:
+        records.action_sync_partner_accounts_from_master()
+else:
+    raise UserError("This action is possible only when Master Company is active.")
+        </field>
+    </record>
+</odoo>
