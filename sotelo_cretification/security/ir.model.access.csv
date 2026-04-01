@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sotelo_cretification.access_project_certification,access_project_certification,sotelo_cretification.model_project_certification,base.group_user,1,1,1,1
+sotelo_cretification.access_project_certification_line,access_project_certification_line,sotelo_cretification.model_project_certification_line,base.group_user,1,1,1,1
