@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+nalios_retirement_timeline.access_retirement_timeline,access_retirement_timeline,nalios_retirement_timeline.model_retirement_timeline,base.group_user,1,1,1,1
+nalios_retirement_timeline.access_investments_investment,access_investments_investment,nalios_retirement_timeline.model_investments_investment,base.group_user,1,1,1,1

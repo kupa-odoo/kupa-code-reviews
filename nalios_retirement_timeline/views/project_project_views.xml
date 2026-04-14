@@ -1,0 +1,36 @@
+<odoo>
+    <record id="edit_project__inherit_nalios_retirement_timeline" model="ir.ui.view">
+        <field name="name">edit.project.inherit.nalios.retirement.timeline</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='analytic']" position="after">
+                <page name="timeline_setup" string="Timeline Setup">
+                    <field name="retirement_timeline_ids">
+                        <list editable="bottom" default_order="ceiling asc">
+                            <field name="currency_id" column_invisible="True" readonly="has_timeline_used" />
+                            <field name="label" readonly="has_timeline_used"/>
+                            <field name="ceiling" widget="monetary" readonly="has_timeline_used"/>
+                            <field name="pct_invest" widget="percentage" readonly="has_timeline_used"/>
+                            <field name="remaining_to_invest" widget="monetary" readonly="has_timeline_used" />
+                        </list>
+                    </field>
+                </page>
+
+                <page name="investment" string="Investments">
+                    <field name="investment_ids">
+                        <list editable="bottom" default_order="date asc">
+                            <field name="currency_id" column_invisible="True" readonly="has_investment"/>
+                            <field name="label" readonly="has_investment"/>
+                            <field name="date" readonly="has_investment"/>
+                            <field name="investment" widget="monetary" readonly="has_investment"/>
+                            <field name="amount_to_invoice" widget="monetary" />
+                            <field name="added_to_so" readonly="has_investment"/>
+                            <field name="product_id" optional="hide" readonly="has_investment"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

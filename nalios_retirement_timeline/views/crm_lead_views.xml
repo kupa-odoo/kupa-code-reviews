@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_lead_view_form_inherit_nalios_retirement_timeline" model="ir.ui.view">
+        <field name="name">crm.lead.view.form.inherit.nalios.retirement.timeline</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//button[@name='action_schedule_meeting']" position="after">
+                <button name="action_view_documents"
+                    type="object"
+                    class="oe_stat_button"
+                    invisible="not document_count"
+                    icon="fa-file">
+                    <field name="document_count" widget="statinfo" string="Documents"/>
+                </button>
+
+                <button name="action_view_tasks"
+                    type="object"
+                    class="oe_stat_button"
+                    invisible="not tasks_count"
+                    icon="fa-check">
+                    <field name="tasks_count" widget="statinfo" string="Tasks"/>
+                </button>
+
+                <button name="action_view_investments"
+                    type="object"
+                    class="oe_stat_button"
+                    invisible="not investment_count"
+                    icon="fa-line-chart">
+                    <field name="investment_count" widget="statinfo" string="Investments"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

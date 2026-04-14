@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_investments_investment_list" model="ir.ui.view">
+        <field name="name">view.investments.investment.list</field>
+        <field name="model">investments.investment</field>
+        <field name="arch" type="xml">
+            <list create="false" edit="false" delete="false">
+                <field name="currency_id" column_invisible="True" />
+                <field name="project_id"/>
+                <field name="customer"/>
+                <field name="investment" sum="Total Investment" widget="monetary" />
+                <field name="amount_to_invoice" sum="Total Amount to Invoice" widget="monetary" />
+                <field name="added_to_so" readonly="True" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_investments_investment_pivot" model="ir.ui.view">
+        <field name="name">view.investments.investment.pivot</field>
+        <field name="model">investments.investment</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="project_id" type="row"/>
+                <field name="customer" type="row"/>
+                <field name="investment" type="measure"/>
+                <field name="amount_to_invoice" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_investments_investment_graph" model="ir.ui.view">
+        <field name="name">view.investments.investment.graph</field>
+        <field name="model">investments.investment</field>
+        <field name="arch" type="xml">
+            <graph type="bar">
+                <field name="project_id" type="row"/>
+                <field name="investment" type="measure"/>
+                <field name="amount_to_invoice" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_investments_investment_search" model="ir.ui.view">
+        <field name="name">view.investments.investment.search</field>
+        <field name="model">investments.investment</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="project_id"/>
+                <field name="customer"/>
+                <group expand="0" string="Group By">
+                    <filter string="Project" name="group_by_project" context="{'group_by': 'project_id'}"/>
+                    <filter string="Customer" name="group_by_customer" context="{'group_by': 'customer'}"/>
+                    <filter string="Added to SO" name="group_by_added_to_so" context="{'group_by': 'added_to_so'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_investment_reporting" model="ir.actions.act_window">
+        <field name="name">Investments Analysis</field>
+        <field name="res_model">investments.investment</field>
+        <field name="view_mode">list,pivot,graph</field>
+        <field name="search_view_id" ref="view_investments_investment_search"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                No data yet!
+            </p>
+            <p>
+                Analyze the progress of your tasks and the performance of your workers.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="fsm_menu_reporting_task_analysis"
+        name="Investment Analysis"
+        action="action_investment_reporting"
+        sequence="10"
+        parent="project.menu_project_report"/>
+
+</odoo>

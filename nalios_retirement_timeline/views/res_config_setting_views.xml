@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_inherit_nalios_retierment_timeline" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.nalios.retierment.timeline</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='sale_management']//block[@name='catalog_setting_container']" position="after">
+                <block title="Investment Product" name="investment_product_container">
+                    <setting id="investment_product_setting" string="Investment Product"
+                            help="Select a service product to be used as the default investment product.">
+                        <field name="investment_product"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_config_settings_view_form_inherit_nalios_retierment_timeline_document" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.nalios.retierment.timeline.document</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="documents.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='documents']//setting[@id='deletion_delay']/.." position="after">
+                <block title="Portal Settings" name="portal_settings_container">
+                    <setting id="default_portal_folder_setting" string="Default Portal Folder"
+                            help="Select default folder for portal documents.">
+                        <field name="portal_folder"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
