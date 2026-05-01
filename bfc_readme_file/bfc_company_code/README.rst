@@ -19,7 +19,7 @@ Creates/Overrides field in ``res.company``:
 .. contents::
    :local:
 
-Dependency
+Dependencies
 ============
 
 This module depends on the following modules:

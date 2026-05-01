@@ -14,7 +14,7 @@ Creates new logic in ``res.partner``:
 .. contents::
    :local:
 
-Dependency
+Dependencies
 ============
 
 This module depends on the following modules:

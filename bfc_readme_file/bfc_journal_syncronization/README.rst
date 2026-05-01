@@ -15,7 +15,7 @@ to ensure consistency across companies.
 .. contents::
    :local:
 
-Dependency
+Dependencies
 ============
 
 This module depends on the following modules:

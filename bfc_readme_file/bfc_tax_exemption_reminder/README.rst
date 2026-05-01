@@ -20,7 +20,7 @@ Creates new fields in ``res.partner`` (or relevant model):
 .. contents::
    :local:
 
-Dependency
+Dependencies
 ============
 
 This module depends on the following modules:
