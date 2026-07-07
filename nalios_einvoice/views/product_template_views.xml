@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_product_category_form_inherit_codes_clients" model="ir.ui.view">
+        <field name="name">product.category.form.inherit.codes.clients</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <group name="first" position="after">
+                <group>
+                    <group name="Codes" string="Codes">
+                        <field name="client_code_ids" mode="list">
+                            <list editable="bottom">
+                                <field name="partner_type_id"/>
+                                <field name="code_client"/>
+                            </list>
+                        </field>
+                    </group>
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>

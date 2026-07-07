@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+nalios_einvoice.access_partner_type,access_partner_type,nalios_einvoice.model_partner_type,base.group_user,1,1,1,1
+nalios_einvoice.access_product_customer_code,access_product_customer_code,nalios_einvoice.model_product_category_client_code,base.group_user,1,1,1,1

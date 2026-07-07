@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form" model="ir.ui.view">
+        <field name="name">view.picking.form.extend</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[.//field[@name='scheduled_date']]" position="after">
+                <field name="date_desiree" />
+            </xpath>
+            <list position="attributes">
+                <attribute name="default_order">sequence</attribute>
+            </list>
+            <xpath expr="//list//field[@name='company_id']" position="before">
+                <field name="sequence" column_invisible="True"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
