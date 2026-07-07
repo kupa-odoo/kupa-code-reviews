@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+BFC_analytic_budget.access_analytic_cost_group_admin,access_analytic_cost_group_admin,BFC_analytic_budget.model_analytic_cost_group,base.group_system,1,1,1,1
+BFC_analytic_budget.access_analytic_cost_group_user,access_analytic_cost_group_user,BFC_analytic_budget.model_analytic_cost_group,base.group_user,1,0,0,0

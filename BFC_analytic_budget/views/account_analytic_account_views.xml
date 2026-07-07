@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_analytic_account_form_inherit_budget" model="ir.ui.view">
+        <field name="name">account.analytic.account.form.inherit</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='budget_line_ids']//list/field[@name='budget_amount']" position="after">
+                <field name="project_budget" readonly="budget_analytic_state != 'draft'"/>
+                <field name="expected_additional_value" readonly="budget_analytic_state != 'draft'"/>
+                <field name="forecast" readonly="1"/>
+            </xpath>
+
+            <xpath expr="//group[@name='main']//field[@name='currency_id']" position="after">
+                <field name="is_project_related" widget="boolean_toggle"/>
+            </xpath>
+
+            <xpath expr="//group[@name='main']" position="after">
+                <group string="Extra Fields" invisible="not is_project_related">
+                    <group>
+                        <field name="project_number" options="{'no_create': True}" context="{'use_project_number': True}" domain="[('project_number', '!=', False)]"/>
+                        <field name="cost_allocation" />
+                        <field name="sub_project_number" />
+                        <field name="company_code" />
+                        <field name="department" />
+                        <field name="analytic_start_date"/>
+                        <field name="analytic_end_date"/>
+                    </group>
+                    <group string="Cost Group">
+                        <field name="cost_group_id"/>
+                        <field name="cost_group_code" readonly="1"/>
+                        <field name="cost_group_name" readonly="1"/>
+                    </group>
+                    <group string="Individual Extension">
+                        <field name="individual_extension_code"/>
+                        <field name="individual_extension_desc"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

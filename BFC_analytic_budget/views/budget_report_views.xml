@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="budget_report_view_list_extend" model="ir.ui.view">
+        <field name="name">budget.report.view.list.extend</field>
+        <field name="model">budget.report</field>
+        <field name="inherit_id" ref="account_budget.budget_report_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="budget" position="after">
+                <field name="project_budget" sum="Total BaseBudget"/>
+                <field name="expected_additional_value" sum="Total Expected Additional Value" />
+                <field name="forecast" readonly="1" sum="Total Avaliable" />
+                <field name="achieved_amount_stored" type="Total Achieved (Stored) "/>
+            </field>
+        </field>
+    </record>
+
+    <record id="budget_report_view_pivot_extend" model="ir.ui.view">
+        <field name="name">budget.report.view.pivot.extend</field>
+        <field name="model">budget.report</field>
+        <field name="inherit_id" ref="account_budget.budget_report_view_pivot"/>
+        <field name="arch" type="xml">
+            <field name="budget" position="after">
+                <field name="project_budget" type="measure" />
+                <field name="expected_additional_value" type="measure" />
+                <field name="forecast" type="measure" />
+                <field name="achieved_amount_stored" type="measure"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="budget_report_view_search_bfc_analytic_budget" model="ir.ui.view">
+        <field name="name">budget.report.view.search.bfc.analytic.budget</field>
+        <field name="model">budget.report</field>
+        <field name="inherit_id" ref="account_budget.budget_report_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group//filter[@name='user_id']" position="after">
+                <filter string="Cost Allocation" name="cost_allocation" context="{'group_by':'cost_allocation'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_budget_analytic_form_inherit_forecast" model="ir.ui.view">
+        <field name="name">budget.analytic.view.form.inherit.forecast</field>
+        <field name="model">budget.analytic</field>
+        <field name="inherit_id" ref="account_budget.view_budget_analytic_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='budget_line_ids']//list/field[@name='budget_amount']" position="after">
+                <field name="project_budget" sum="Total Project Budget" />
+                <field name="expected_additional_value" sum="Total Expected Additional Value" />
+                <field name="forecast" sum="Total Forecast" />
+                <field name="cost_allocation" optional="hide" />
+            </xpath>
+
+            <xpath expr="//field[@name='budget_line_ids']//list/field[@name='budget_amount']" position="before">
+                <field name="analytic_start_date" string="Start Date"/>
+                <field name="analytic_end_date" string="End Date"/>
+            </xpath>
+
+            <xpath expr="//header//button[@name='action_budget_draft']" position="before">
+                <button string="Request for Approval" name="action_request_approval" invisible="is_approval_requested or state != 'draft'" type="object" class="btn-primary"/>
+                <button string="Approval Requested"
+                    type="object"
+                    class="btn-secondary"
+                    invisible="not is_approval_requested or is_approved"
+                    readonly="1"
+                />
+                <button
+                    string="Approve Budget"
+                    name="action_approve_budget"
+                    type="object"
+                    class="btn-primary"
+                    groups="BFC_analytic_budget.group_analytic_budget_releaser"
+                    invisible=" not is_approval_requested or is_approved"
+                />
+            </xpath>
+
+            <xpath expr="//button[@name='action_budget_confirm']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='company_id']" position="before">
+                <field name="is_approved" widget="boolean_toggle" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

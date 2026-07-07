@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_budget_line_tree_inherit_forecast" model="ir.ui.view">
+        <field name="name">budget.line.list.inherit.forecast</field>
+        <field name="model">budget.line</field>
+        <field name="inherit_id" ref="account_budget.view_budget_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list/field[@name='budget_amount']" position="after">
+                <field name="project_budget" readonly="budget_analytic_state != 'draft'"/>
+                <field name="expected_additional_value" readonly="budget_analytic_state != 'draft'"/>
+                <field name="forecast" readonly="1"/>
+            </xpath>
+
+            <xpath expr="//list/field[@name='achieved_amount']" position="after">
+                <field name="achieved_amount_stored" class="text-warning" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_budget_line_form_inherit_forecast" model="ir.ui.view">
+        <field name="name">budget.line.form.inherit.forecast</field>
+        <field name="model">budget.line</field>
+        <field name="inherit_id" ref="account_budget.view_budget_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='budget_amount']" position="after">
+                <field name="project_budget" readonly="budget_analytic_state != 'draft'"/>
+                <field name="expected_additional_value" readonly="budget_analytic_state != 'draft'"/>
+                <field name="forecast" readonly="1"/>
+                <field name="achieved_amount_stored" readonly="budget_analytic_state != 'draft'"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_budget_line_pivot_inherit_forecast" model="ir.ui.view">
+        <field name="name">budget.line.pivot.inherit.forecast</field>
+        <field name="model">budget.line</field>
+        <field name="inherit_id" ref="account_budget.view_budget_line_pivot"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='budget_amount']" position="after">
+                <field name="project_budget" type="measure"/>
+                <field name="expected_additional_value" type="measure"/>
+                <field name="forecast" type="measure"/>
+                <field name="achieved_amount_stored" type="measure"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_budget_line_graph_inherit_forecast" model="ir.ui.view">
+        <field name="name">budget.line.graph.inherit.forecast</field>
+        <field name="model">budget.line</field>
+        <field name="inherit_id" ref="account_budget.view_budget_line_graph"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='budget_amount']" position="after">
+                <field name="project_budget" type="measure"/>
+                <field name="expected_additional_value" type="measure"/>
+                <field name="forecast" type="measure"/>
+                <field name="achieved_amount_stored" type="measure" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
