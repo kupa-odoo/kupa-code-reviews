@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<record id="view_move_form_inhetit_sotelo_certification" model="ir.ui.view">
+        <field name="name">view.move.form.inhetit.sotelo.certification</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/div[@name='button_box']" position="inside">
+                <button name="action_view_certification" type="object" class="oe_stat_button" icon="fa-duotone fa-regular fa-certificate" invisible="certfication_id == False">
+                    <span class="o_stat_text">Cretification</span>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

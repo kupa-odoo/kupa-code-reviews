@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="edit_project_inhetit_sotelo_certification" model="ir.ui.view">
+        <field name="name">edit.project.inhetit.sotelo.certification</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="certificate" string="Certification">
+                    <group>
+                        <field name="certification_product" />
+                        <field name="invoice_deduction_product" />
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="project_embedded_action_project_certification" model="ir.embedded.actions">
+        <field name="parent_res_model">project.project</field>
+        <field name="name">Certification</field>
+        <field name="parent_action_id" ref="project.act_project_project_2_project_task_all"/>
+        <field name="python_method">action_view_certifications</field>
+        <field name="domain">[('allow_billable', '=', True)]</field>
+    </record>
+</odoo>
