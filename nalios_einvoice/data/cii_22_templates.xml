@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="account_invoice_facturx_export_22_nalios" xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100" xmlns:rsm="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100" inherit_id="account_edi_ubl_cii.account_invoice_facturx_export_22">
+            <xpath expr="//*[local-name()='TypeCode']" position="after">
+                <ram:IssuerGln  t-out="ExchangedDocument_vals.get('issuer_gln')"/>
+                <ram:InvoiceGln t-out="ExchangedDocument_vals.get('invoice_gln')"/>
+                <ram:DeliveryGln t-out="ExchangedDocument_vals.get('delivery_gln')"/>
+            </xpath>
+    </template>
+
+    <template id="account_invoice_line_facturx_export_22_nalios" xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100" xmlns:rsm="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100" inherit_id="account_edi_ubl_cii.account_invoice_line_facturx_export_22">
+            <xpath expr="//*[local-name()='GlobalID']" position="after">
+                <ram:ProductCode t-if="line.product_id and line_vals.get('product_code')"
+                    t-out="line_vals.get('product_code')"/>
+            </xpath>
+    </template>
+</odoo>

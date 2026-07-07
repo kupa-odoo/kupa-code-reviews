@@ -1,0 +1,21 @@
+<odoo>
+    <template id="report_delivery_document_inherit" inherit_id="stock.report_delivery_document">
+        <xpath expr="//div[@name='div_sched_date']" position="after">
+            <div t-if="o.state and o.date_desiree" class="col col-3 mw-100 mb-2" name="div_sched_date">
+                <strong>Desired Date</strong>
+                <div t-field="o.date_desiree" class="m-0"/>
+            </div>
+            <div t-if="o.partner_id.abbreviation" class="col col-3 mw-100 mb-2">
+                <strong>Abbrevations</strong>
+                <div t-field="o.partner_id.abbreviation" class="m-0"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[@name='div_sched_date']" position="before">
+            <div t-if="o.state and o.company_id.partner_id.gln" class="col col-3 mw-80 mb-2">
+                <strong>GLN:</strong>
+                <div t-field="o.company_id.partner_id.gln" class="m-0"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>
