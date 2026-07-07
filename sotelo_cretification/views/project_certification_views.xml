@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_project_certification_list" model="ir.ui.view">
+        <field name="name">project.certification.list</field>
+        <field name="model">project.certification</field>
+        <field name="arch" type="xml">
+            <list string="Project Certifications">
+                <field name="name" string="Number"/>
+                <field name="partner_id"/>
+                <field name="date_certification"/>
+                <field name="project_id"/>
+                <field name="payment_term_id"/>
+                <field name="company_id" groups="base.group_multi_company" invisible="1"/>
+                <field name="pending_total_amount" sum="Total Pending Amount"/>
+                <field name="accumulated_certification_total_amount" sum="Total Accumulated"/>
+                <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-success="state == 'confirmed'" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_project_certification_form" model="ir.ui.view">
+        <field name="name">project.certification.form</field>
+        <field name="model">project.certification</field>
+        <field name="arch" type="xml">
+            <form string="Project Certification">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                    <button string="Create Invoice" invisible="state in ['confirmed', 'draft']" name="action_create_invoice" type="object" class="btn-primary"/>
+                    <button string="Certfication Ready" invisible="state in ['confirmed', 'ready']" name="action_mark_certfication_ready" type="object" class="btn-primary"/>
+                    <button string="Print" name="%(action_report_project_certification)d" type="action"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_invoice" type="object" class="oe_stat_button" icon="fa-pencil-square-o" invisible="certificate_invoice_id == False">
+                            <span class="o_stat_text">Invoice</span>
+                        </button>
+                    </div>
+
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group name="certification_header">
+                        <group name="partner_details">
+                            <label for="project_id"/>
+                            <div class="o_row">
+                                <field name="project_id" readonly="state == 'confirmed'" options="{'no_open': True, 'no_create': True}"/>
+                                <button name="action_update_certification_line" type="object" string="Update line" help="update certification line based on the project." class="btn-link mb-1 px-0" icon="fa-refresh" confirm="This will create new certiifcation lines based on the selected project." invisible="not show_update_certification_line"/>
+                            </div>
+                            <field name="partner_id" widget="res_partner_many2one" readonly="state == 'confirmed'" context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}"/>
+                            <field name="partner_invoice_id" groups="account.group_delivery_invoice_address" options="{'no_quick_create': True}" readonly="state == 'confirmed'" />
+                            <field name="partner_shipping_id" groups="account.group_delivery_invoice_address" options="{'no_quick_create': True}" readonly="state == 'confirmed'" />
+                        </group>
+                        <group name="certification_details">
+                            <div class="o_td_label">
+                                <label for="date_certification" string="Certification Date"/>
+                            </div>
+                            <field name="date_certification" readonly="state == 'confirmed'" nolabel="1"/>
+                            <field name="payment_term_id" readonly="state == 'confirmed'" placeholder="Immediate" options="{'no_open': True, 'no_create': True}"/>
+                            <field name="billable_status"/>
+                            <field name="currency_id" invisible="1" />
+                            <field name="is_first_certification" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="certification_lines" string="Certification Lines">
+                            <field name="certification_line_ids" widget="product_label_section_and_note_field_o2m" readonly="state in ['confirmed', 'ready']" >
+                                <list editable="bottom">
+                                    <control>
+                                        <create name="add_product_control" string="Add a product"/>
+                                        <create name="add_section_control" string="Add a section" context="{'default_display_type': 'line_section'}"/>
+                                    </control>
+                                    <field name="display_type" column_invisible="True"/>
+                                    <field name="sequence" widget="handle" />
+                                    <field name="currency_id" column_invisible="1"/>
+                                    <field name="sale_id"/>
+                                    <field name="product_id" widget="product_label_section_and_note_field" optional="conditional"/>
+                                    <field name="name" widget="section_and_note_text" optional="show"/>
+                                    <field name="product_uom_qty"/>
+                                    <field name="price_unit"/>
+                                    <field name="discount"/>
+                                    <field name="net_unit_price"/>
+                                    <field name="price_subtotal" sum="Sub Total"/>
+                                    <field name="work_status"/>
+                                    <field name="certification_percentage" widget="percentage"/>
+                                    <field name="certification_uds"/>
+                                    <field name="certification_amount" sum="Certification Amount" optional="hide" />
+                                    <field name="accumulated_percentage" widget="percentage" optional="hide" />
+                                    <field name="accumulated_uds" optional="hide" />
+                                    <field name="accumulated_amount" sum="Accumulated Amount" />
+                                    <field name="pending_ceri_percentage" widget="percentage" optional="hide" />
+                                    <field name="pending_certi_uds" optional="hide" />
+                                    <field name="pending_certi_amount" sum="Pending Certi Amount" />
+                                    <field name="prev_work_status" optional="hide" />
+                                    <field name="prev_certification_percentage" widget="percentage" optional="hide" />
+                                    <field name="prev_certification_uds" optional="hide" />
+                                    <field name="prev_certification_amount" sum="Prev Certification Amount" optional="hide"/>
+                                    <field name="prev_accumulated_percentage" widget="confirm_percentage" optional="hide" />
+                                    <field name="is_prev_accumulated_manual" column_invisible="True"/>
+                                    <field name="is_prev_accumulated_changed" column_invisible="True"/>
+                                    <field name="prev_accumulated_uds" optional="hide" />
+                                    <field name="prev_accumulated_amount" sum="Prev Accumulated Amount" optional="hide"/>
+                                    <field name="prev_pending_certi_percentage" widget="percentage" optional="hide" />
+                                    <field name="prev_pending_certi_uds" optional="hide" />
+                                    <field name="prev_pending_certi_amount" sum="Prev Pending Certi Amount" optional="hide"/>
+                                </list>
+                            </field>
+                            <group col="6">
+                                <group colspan="3">
+                                    <field colspan="2" name="note" nolabel="1" placeholder="Terms and conditions..."/>
+                                </group>
+
+                                <group class="oe_subtotal_footer" colspan="3">
+                                    <field name="certification_totals" widget="certification-total" nolabel="1" readonly="1"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_project_certification_search" model="ir.ui.view">
+        <field name="name">project.certification.search</field>
+        <field name="model">project.certification</field>
+        <field name="arch" type="xml">
+            <search string="Search Certification">
+                <field name="name" string="Certification Number"/>
+                <field name="partner_id"/>
+                <field name="project_id"/>
+                <group>
+                    <filter name="customer" string="Customer" context="{'group_by': 'partner_id'}"/>
+                    <filter name="project" string="Project" context="{'group_by': 'project_id'}"/>
+                    <filter name="order_month" string="Certification Date" context="{'group_by': 'date_certification'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_project_certification" model="ir.actions.act_window">
+        <field name="name">Project Certifications</field>
+        <field name="res_model">project.certification</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_project_certification_search"/>
+        <field name="context">{'search_default_project': 1}</field>
+    </record>
+
+    <menuitem id="menu_certification_root" name="Certifications" sequence="71" />
+    <menuitem id="menu_project_certification" name="Project Certifications" parent="menu_certification_root" action="action_project_certification" sequence="1" />
+</odoo>
