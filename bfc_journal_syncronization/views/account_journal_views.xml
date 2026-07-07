@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="view_account_journal_form_bfc_journal_synchronization" model="ir.ui.view">
+        <field name="name">account.journal.form.inherit.bfc.journal.synchronization</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button
+                        name="action_sync_to_child_journals"
+                        string="Sync All Journals"
+                        type="object"
+                        class="oe_highlight"
+                        invisible="not has_master_company or type not in ['sale', 'purchase', 'general']"
+                        groups="bfc_master_company_coa_sync.group_account_sync"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+</odoo>
