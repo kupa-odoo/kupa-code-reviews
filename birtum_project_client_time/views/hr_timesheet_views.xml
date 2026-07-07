@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_timesheet_line_tree_inherit_birtum_project_client_time" model="ir.ui.view">
+        <field name="name">account.analytic.line.list.inherit.birtum.project.client.time</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list/field[@name='unit_amount']" position="attributes">
+                <attribute name="column_invisible">context.get('timesheet_view_mode') == 'client'</attribute>
+            </xpath>
+
+            <xpath expr="//list/field[@name='unit_amount']" position="after">
+                <field
+                    name="client_time"
+                    string="Client Time"
+                    optional="show"
+                    widget="timesheet_uom"
+                    sum="Total Client Time"
+                    column_invisible="context.get('timesheet_view_mode') == 'tracking'"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="project_project_view_kanban_inherit_birtum_project_client_time" model="ir.ui.view">
+        <field name="name">project.project.kanban.inherit.birtum.project.client.time</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="hr_timesheet.view_project_kanban_inherited"/>
+        <field name="arch" type="xml">
+            <xpath expr="//a[@name='action_project_timesheets']" position="attributes">
+                <attribute name="invisible">true</attribute>
+            </xpath>
+
+            <xpath expr="//div[@name='card_menu_view']" position="inside">
+                <div
+                    role="menuitem"
+                    t-if="record.allow_timesheets.raw_value and !record.is_template.raw_value"
+                    groups="hr_timesheet.group_hr_timesheet_user">
+                    <a name="action_project_timesheets_tracking" type="object">Timesheet Tracking</a>
+                </div>
+                <div
+                    role="menuitem"
+                    t-if="record.allow_timesheets.raw_value and !record.is_template.raw_value"
+                    groups="hr_timesheet.group_hr_timesheet_user">
+                    <a name="action_project_timesheets_client" type="object">Client Timesheet</a>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

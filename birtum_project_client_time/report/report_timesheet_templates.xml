@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_timesheet_table_inherit_birtum_project_client_time" inherit_id="hr_timesheet.timesheet_table">
+
+        <xpath expr="//table//thead//tr//th[hasclass('text-end')]//span" position="attributes">
+            <attribute name="t-if">false</attribute>
+        </xpath>
+        <xpath expr="//table//thead//tr//th[hasclass('text-end')]//span" position="after">
+            <span>Client Time</span>
+        </xpath>
+
+        <xpath expr="//table//tbody//tr//td[hasclass('text-end')]//span[@t-if='not is_uom_day']" position="attributes">
+            <attribute name="t-field">line.client_time</attribute>
+        </xpath>
+
+        <xpath expr="//t[@t-esc=&quot;sum(lines.mapped('unit_amount'))&quot;]" position="attributes">
+            <attribute name="t-esc">sum(lines.mapped('client_time'))</attribute>
+        </xpath>
+
+        <xpath
+            expr="//t[@t-esc=&quot;lines._convert_hours_to_days(sum(lines.mapped('unit_amount')))&quot;]"
+            position="attributes">
+            <attribute name="t-esc">lines._convert_hours_to_days(sum(lines.mapped('client_time')))</attribute>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template
+        id="portal_timesheet_table_inherit_birtum_project_client_time"
+        inherit_id="hr_timesheet.portal_timesheet_table"
+        name="Portal Timesheet Table - Client Time">
+        <xpath expr="//span[@t-else][@t-field='timesheet.unit_amount']" position="attributes">
+            <attribute name="t-if">false</attribute>
+        </xpath>
+
+        <xpath expr="//span[@t-else][@t-field='timesheet.unit_amount']" position="after">
+            <span t-else="" t-field="timesheet.client_time" t-options='{"widget": "float_time"}'/>
+        </xpath>
+
+        <xpath
+            expr="//tr[td/strong[contains(text(), 'Total Time Spent')]]/td[hasclass('text-end')]/span[1]"
+            position="attributes">
+            <attribute name="t-esc">
+                timesheets._convert_hours_to_days(task.portal_effective_client_hours)
+            </attribute>
+        </xpath>
+
+        <xpath
+            expr="//tr[td/strong[contains(text(), 'Total Time Spent')]]/td[hasclass('text-end')]/span[2]"
+            position="attributes">
+            <attribute name="t-esc">task.effective_client_hours</attribute>
+        </xpath>
+
+        <xpath expr="//th[@name='t_label']" position="replace">
+            <th class="text-end" name="t_label">Client Time</th>
+        </xpath>
+    </template>
+
+    <template
+        id="portal_my_timesheets_inherit_birtum_project_client_time"
+        inherit_id="hr_timesheet.portal_my_timesheets"
+        name="My Timesheets - Client Time">
+        <xpath expr="//span[@t-field='timesheet.unit_amount']" position="attributes">
+            <attribute name="t-if">false</attribute>
+        </xpath>
+
+        <xpath expr="//span[@t-field='timesheet.unit_amount']" position="after">
+            <span t-else="" t-field="timesheet.client_time" t-options='{"widget": "float_time"}'/>
+        </xpath>
+
+        <xpath expr="//th[@name='t_label']" position="replace">
+            <th class="text-end" name="t_label">Client Time</th>
+        </xpath>
+    </template>
+</odoo>

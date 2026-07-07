@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template
+        id="portal_tasks_list_birtum_project_client_time"
+        inherit_id="project.portal_tasks_list"
+        name="Project Task Portal Template Table - Client Time">
+        <xpath
+            expr="//t[@t-out='timesheet_ids._convert_hours_to_days(task.portal_total_hours_spent)']"
+            position="replace">
+            <t t-out="timesheet_ids._convert_hours_to_days(task.portal_total_client_hours_spent)"/>
+        </xpath>
+
+        <xpath expr="//span[@t-field='task.portal_total_hours_spent']" position="attributes">
+            <attribute name="t-field">task.portal_total_client_hours_spent</attribute>
+        </xpath>
+    </template>
+
+    <template
+        id="portal_tasks_list_inheritbirtum_project_client_time"
+        inherit_id="hr_timesheet.portal_tasks_list_inherit"
+        name="Project Task Portal Template Table - Client Time">
+        <xpath expr="//span[@t-if='task.allocated_hours > 0']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+
+        <xpath expr="//t[@t-if='task.allocated_hours > 0']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+
+        <xpath expr="//t[@t-if='is_uom_day']/t[@t-if='total_allocated_hours']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+
+        <xpath expr="//t[@t-else='']/t[@t-if='total_allocated_hours']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+    </template>
+</odoo>

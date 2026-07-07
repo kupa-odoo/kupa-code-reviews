@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_order_form_inherit_sale_timesheet_birtum_project_client_time" model="ir.ui.view">
+        <field name="name">sale.order.form.sale.timesheet.birtum.project.client.time</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_project.view_order_form_inherit_sale_project"/>
+        <field name="arch" type="xml">
+            <xpath
+                expr="//button[@name='action_view_timesheet']//field[@name='timesheet_total_duration']/.."
+                position="after">
+                <span class="o_stat_value" style="font-size:10px;">
+                    <field name="timesheet_client_total_duration" class="mr4"/>
+                    <span>Client </span>
+                    <field name="timesheet_encode_uom_id" options="{'no_open': True}"/>
+                </span>
+            </xpath>
+
+            <xpath expr="//div[hasclass('o_stat_info')]/span[hasclass('o_stat_value')]" position="attributes">
+                <attribute name="style">font-size:10px;</attribute>
+            </xpath>
+
+             <xpath expr="//div[hasclass('o_stat_info')]/span[hasclass('o_stat_text')]" position="attributes">
+                <attribute name="style">font-size:10px;</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
