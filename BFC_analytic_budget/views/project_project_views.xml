@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_project_form_bfc_analytic_budget" model="ir.ui.view">
+        <field name="name">project.project.form.bfc.analytic.budget</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="project_number"/>
+                <field name="master_project" readonly="True" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_project_project_search_inherit_bfc_purchase_report" model="ir.ui.view">
+        <field name="name">view.project.project.search.inherit.bfc.purchase.report</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_project_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="master_project" string="Master Project"/>
+            </xpath>
+
+            <xpath expr="//group" position="inside">
+                <filter name="group_by_master_project" string="Master Project" context="{'group_by': 'master_project'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

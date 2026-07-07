@@ -1,0 +1,446 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* BFC_analytic_budget
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-13 13:06+0000\n"
+"PO-Revision-Date: 2026-01-13 13:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__cost_allocation__0
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__budget_line__cost_allocation__0
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__budget_report__cost_allocation__0
+msgid "-0 Project"
+msgstr "-0 Projekt"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__cost_allocation__7
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__budget_line__cost_allocation__7
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__budget_report__cost_allocation__7
+msgid "-7 Early Phase"
+msgstr "-7 Frühphase"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__cost_allocation__8
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__budget_line__cost_allocation__8
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__budget_report__cost_allocation__8
+msgid "-8 Closing Postings"
+msgstr "-8 Abschlussbuchungen"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__cost_allocation__9
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__budget_line__cost_allocation__9
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__budget_report__cost_allocation__9
+msgid "-9 Internal Services"
+msgstr "-9 Eigenleistungen"
+
+#. module: BFC_analytic_budget
+#. odoo-python
+#: code:addons/BFC_analytic_budget/models/budget_analytic.py:0
+msgid "A budget %(budget)s requires your approval.<br/>%(link)s"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__department__ac
+msgid "AC"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model,name:BFC_analytic_budget.model_account_analytic_account
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__name
+msgid "Analytic Account"
+msgstr "Kostenstelle"
+
+#. module: BFC_analytic_budget
+#: model:res.groups,name:BFC_analytic_budget.group_analytic_account_releaser
+msgid "Analytic Account Releaser"
+msgstr "Analytischer Kontofreigeber"
+
+#. module: BFC_analytic_budget
+#: model:res.groups,name:BFC_analytic_budget.group_analytic_budget_releaser
+msgid "Analytic Budget Releaser"
+msgstr "Analytischer Budgetfreigaber"
+
+#. module: BFC_analytic_budget
+#: model:ir.model,name:BFC_analytic_budget.model_analytic_cost_group
+msgid "Analytic Cost Group"
+msgstr "Analytische Kostengruppe"
+
+#. module: BFC_analytic_budget
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_budget_analytic_form_inherit_forecast
+msgid "Approval Requested"
+msgstr "Genehmigung beantragt"
+
+#. module: BFC_analytic_budget
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_budget_analytic_form_inherit_forecast
+msgid "Approve Budget"
+msgstr "Budget genehmigen"
+
+#. module: BFC_analytic_budget
+#: model:ir.model,name:BFC_analytic_budget.model_budget_analytic
+msgid "Budget"
+msgstr "Budget"
+
+#. module: BFC_analytic_budget
+#. odoo-python
+#: code:addons/BFC_analytic_budget/models/budget_analytic.py:0
+msgid "Budget Approval Requested"
+msgstr "Budgetgenehmigung beantragt"
+
+#. module: BFC_analytic_budget
+#: model:ir.model,name:BFC_analytic_budget.model_budget_line
+msgid "Budget Line"
+msgstr "Budgetzeile"
+
+#. module: BFC_analytic_budget
+#: model:ir.model,name:BFC_analytic_budget.model_budget_report
+msgid "Budget Report"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#. odoo-python
+#: code:addons/BFC_analytic_budget/models/budget_analytic.py:0
+msgid "Click here to review the budget"
+msgstr "Klicken Sie hier, um das Budget einzusehen"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__company_code
+msgid "Company Code"
+msgstr "Buchungskreis"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__cost_allocation
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_line__cost_allocation
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_report__cost_allocation
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.budget_report_view_search_bfc_analytic_budget
+msgid "Cost Allocation"
+msgstr "Kostenzuordnung"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__cost_group_id
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_account_analytic_account_form_inherit_budget
+msgid "Cost Group"
+msgstr "Kostengruppe"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__cost_group_code
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_analytic_cost_group__code
+msgid "Cost Group Code"
+msgstr "Kostengruppencode"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__cost_group_name
+msgid "Cost Group Description"
+msgstr "Beschreibung der Kostengruppe"
+
+#. module: BFC_analytic_budget
+#: model:ir.actions.act_window,name:BFC_analytic_budget.action_analytic_cost_group
+#: model:ir.ui.menu,name:BFC_analytic_budget.menu_analytic_cost_group
+msgid "Cost Groups"
+msgstr "Kostengruppe"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_analytic_cost_group__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_analytic_cost_group__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__department__dv
+msgid "DV"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__department
+msgid "Department"
+msgstr "Fachbereich"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_analytic_cost_group__name_de
+msgid "Description DE"
+msgstr "Sprachenschlüssel DE"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_analytic_cost_group__name_en
+msgid "Description EN"
+msgstr "Sprachenschlüssel EN"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__display_name
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_analytic_cost_group__display_name
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_analytic__display_name
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_line__display_name
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_report__display_name
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_project_project__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_line__expected_additional_value
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_report__expected_additional_value
+msgid "Expected Additional Value"
+msgstr "Nachtragserwartung"
+
+#. module: BFC_analytic_budget
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_account_analytic_account_form_inherit_budget
+msgid "Extra Fields"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__department__fi
+msgid "FI"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_line__forecast
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_report__forecast
+msgid "Forecast"
+msgstr "Vorhersage"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__department__gb
+msgid "GB"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__department__gp
+msgid "GP"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__id
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_analytic_cost_group__id
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_analytic__id
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_line__id
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_report__id
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_project_project__id
+msgid "ID"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_account_analytic_account_form_inherit_budget
+msgid "Individual Extension"
+msgstr "Individuelle Erweiterung"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__individual_extension_code
+msgid "Individual Extension Code"
+msgstr "Individueller Erweiterungscode"
+
+#. module: BFC_analytic_budget
+#. odoo-python
+#: code:addons/BFC_analytic_budget/models/analytic_account.py:0
+msgid "Individual Extension Code must be alphanumeric."
+msgstr "Der individuelle Durchwahlcode muss alphanumerisch sein."
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__individual_extension_desc
+msgid "Individual Extension Description"
+msgstr "Individuelle Erweiterungsbeschreibung"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_analytic__is_approval_requested
+msgid "Is Approval Requested"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_analytic__is_approved
+msgid "Is Approved"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__department__le
+msgid "LE"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_analytic_cost_group__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_analytic_cost_group__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,help:BFC_analytic_budget.field_project_project__project_number
+msgid "Project Number must start with 'B-' followed by four digit only (e.g. B-1814)."
+msgstr "Die Projektnummer muss mit 'B-' beginnen, gefolgt von vier Ziffern (z. B. B-1814)."
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__state__not_released
+msgid "Not Released"
+msgstr "Nicht veröffentlicht"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__department__oe
+msgid "OE"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__department__pd
+msgid "PD"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model,name:BFC_analytic_budget.model_project_project
+msgid "Project"
+msgstr "Projekt"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_line__project_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_budget_report__project_budget
+msgid "Project Budget"
+msgstr "Projektbudget"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__project_number
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_project_project__project_number
+msgid "Project Number"
+msgstr "Projektnummer"
+
+#. module: BFC_analytic_budget
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_account_analytic_account_form_inherit_budget
+msgid "Release"
+msgstr "Freigeben"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__state__released
+msgid "Released"
+msgstr "Freigegeben"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__released_by
+msgid "Released By"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__released_on
+msgid "Released On"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_budget_analytic_form_inherit_forecast
+msgid "Request for Approval"
+msgstr "Antrag auf Genehmigung"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,help:BFC_analytic_budget.field_account_analytic_account__project_number
+msgid "Select project number from linked projects"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,help:BFC_analytic_budget.field_account_analytic_account__cost_group_id
+msgid "Select the cost group from master list"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__state
+msgid "Status"
+msgstr "Status"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__sub_project_number
+msgid "Sub Project Number"
+msgstr "Teilprojektnummer"
+
+#. module: BFC_analytic_budget
+#. odoo-python
+#: code:addons/BFC_analytic_budget/models/analytic_account.py:0
+msgid "The Sub Project Number must be exactly 4 characters (e.g., -011)."
+msgstr "Die Teilprojektnummer muss genau 4 Zeichen lang sein (z. B. -011)."
+
+#. module: BFC_analytic_budget
+#. odoo-python
+#: code:addons/BFC_analytic_budget/models/analytic_account.py:0
+msgid "The Sub Project Number must start with %s"
+msgstr "Die Teilprojektnummer muss mit %s beginnen."
+
+#. module: BFC_analytic_budget
+#. odoo-python
+#: code:addons/BFC_analytic_budget/models/budget_line.py:0
+msgid ""
+"The project budget exceeds the approved budget. Please request a budget "
+"increase."
+msgstr ""
+"Das Projektbudget übersteigt das freigegebene Budget. Bitte beantrage eine "
+"Erhöhung des Budgets."
+
+#. module: BFC_analytic_budget
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_budget_analytic_form_inherit_forecast
+msgid "Total Commitment"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.budget_report_view_list_extend
+msgid "Total Committed"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.budget_report_view_list_extend
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_budget_analytic_form_inherit_forecast
+msgid "Total Expected Additional Value"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.budget_report_view_list_extend
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_budget_analytic_form_inherit_forecast
+msgid "Total Forecast"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_budget_analytic_form_inherit_forecast
+msgid "Total Project Budget"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__department__vm
+msgid "VM"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields.selection,name:BFC_analytic_budget.selection__account_analytic_account__department__wl
+msgid "WL"
+msgstr ""
+
+#. module: BFC_analytic_budget
+#. odoo-python
+#: code:addons/BFC_analytic_budget/models/analytic_account.py:0
+msgid "You are not allowed to release or unrelease analytic accounts."
+msgstr "Es ist Ihnen nicht gestattet, Analysekonten freizugeben oder die Freigabe zu widerrufen.
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__analytic_start_date
+msgid "Start Date"
+msgstr "Start datum"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__analytic_end_date
+msgid "End Date"
+msgstr "End datum"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__analytic_start_date
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_budget_analytic_form_inherit_forecast
+msgid "Start Date"
+msgstr "Start datum"
+
+#. module: BFC_analytic_budget
+#: model:ir.model.fields,field_description:BFC_analytic_budget.field_account_analytic_account__analytic_end_date
+#: model_terms:ir.ui.view,arch_db:BFC_analytic_budget.view_budget_analytic_form_inherit_forecast
+msgid "End Date"
+msgstr "End datum"
